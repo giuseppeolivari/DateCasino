@@ -19,6 +19,8 @@
 		068EB2EA2B8352A800A9DA6D /* ScrollableView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2E92B8352A800A9DA6D /* ScrollableView1.swift */; };
 		068EB2EC2B8352F700A9DA6D /* ScrollableView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2EB2B8352F700A9DA6D /* ScrollableView2.swift */; };
 		068EB2EE2B83530600A9DA6D /* ScrollableView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2ED2B83530600A9DA6D /* ScrollableView3.swift */; };
+		068EB2F52B835CE000A9DA6D /* LasVegas-Jackpot.otf in Resources */ = {isa = PBXBuildFile; fileRef = 068EB2F42B835CE000A9DA6D /* LasVegas-Jackpot.otf */; };
+		068EB2F62B835CE000A9DA6D /* LasVegas-Jackpot.otf in Resources */ = {isa = PBXBuildFile; fileRef = 068EB2F42B835CE000A9DA6D /* LasVegas-Jackpot.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,9 @@
 		068EB2E92B8352A800A9DA6D /* ScrollableView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView1.swift; sourceTree = "<group>"; };
 		068EB2EB2B8352F700A9DA6D /* ScrollableView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView2.swift; sourceTree = "<group>"; };
 		068EB2ED2B83530600A9DA6D /* ScrollableView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView3.swift; sourceTree = "<group>"; };
+		068EB2F32B835B6800A9DA6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		068EB2F42B835CE000A9DA6D /* LasVegas-Jackpot.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LasVegas-Jackpot.otf"; path = "../../../../../../../Library/Fonts/LasVegas-Jackpot.otf"; sourceTree = "<group>"; };
+		068EB2F72B835D4600A9DA6D /* DateCasino-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DateCasino-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +87,7 @@
 		068EB2B92B83522900A9DA6D = {
 			isa = PBXGroup;
 			children = (
+				068EB2EF2B835AEC00A9DA6D /* Font */,
 				068EB2C42B83522900A9DA6D /* DateCasino */,
 				068EB2D62B83522A00A9DA6D /* DateCasino Watch App */,
 				068EB2C32B83522900A9DA6D /* Products */,
@@ -100,6 +106,7 @@
 		068EB2C42B83522900A9DA6D /* DateCasino */ = {
 			isa = PBXGroup;
 			children = (
+				068EB2F32B835B6800A9DA6D /* Info.plist */,
 				068EB2C52B83522900A9DA6D /* DateCasinoApp.swift */,
 				068EB2C72B83522900A9DA6D /* ContentView.swift */,
 				068EB2C92B83522A00A9DA6D /* Assets.xcassets */,
@@ -119,6 +126,7 @@
 		068EB2D62B83522A00A9DA6D /* DateCasino Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				068EB2F72B835D4600A9DA6D /* DateCasino-Watch-App-Info.plist */,
 				068EB2D72B83522A00A9DA6D /* DateCasinoApp.swift */,
 				068EB2D92B83522A00A9DA6D /* FirstPage.swift */,
 				068EB2E92B8352A800A9DA6D /* ScrollableView1.swift */,
@@ -136,6 +144,14 @@
 				068EB2DE2B83522B00A9DA6D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		068EB2EF2B835AEC00A9DA6D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				068EB2F42B835CE000A9DA6D /* LasVegas-Jackpot.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				068EB2CD2B83522A00A9DA6D /* Preview Assets.xcassets in Resources */,
+				068EB2F52B835CE000A9DA6D /* LasVegas-Jackpot.otf in Resources */,
 				068EB2CA2B83522A00A9DA6D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				068EB2DF2B83522B00A9DA6D /* Preview Assets.xcassets in Resources */,
+				068EB2F62B835CE000A9DA6D /* LasVegas-Jackpot.otf in Resources */,
 				068EB2DC2B83522B00A9DA6D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +411,7 @@
 				DEVELOPMENT_TEAM = XQMJRDV4LZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DateCasino-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = DateCasino;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.giuseppeolivari.prova.DateCasino;
@@ -423,6 +442,7 @@
 				DEVELOPMENT_TEAM = XQMJRDV4LZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DateCasino-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = DateCasino;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.giuseppeolivari.prova.DateCasino;
@@ -455,6 +475,7 @@
 				DEVELOPMENT_TEAM = XQMJRDV4LZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DateCasino/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DateCasino;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -488,6 +509,7 @@
 				DEVELOPMENT_TEAM = XQMJRDV4LZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DateCasino/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DateCasino;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
