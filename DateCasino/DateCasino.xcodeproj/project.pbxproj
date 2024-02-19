@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		068EB2C62B83522900A9DA6D /* DateCasinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2C52B83522900A9DA6D /* DateCasinoApp.swift */; };
+		068EB2C82B83522900A9DA6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2C72B83522900A9DA6D /* ContentView.swift */; };
+		068EB2CA2B83522A00A9DA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068EB2C92B83522A00A9DA6D /* Assets.xcassets */; };
+		068EB2CD2B83522A00A9DA6D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068EB2CC2B83522A00A9DA6D /* Preview Assets.xcassets */; };
+		068EB2D32B83522A00A9DA6D /* DateCasino Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 068EB2D22B83522A00A9DA6D /* DateCasino Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		068EB2D82B83522A00A9DA6D /* DateCasinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2D72B83522A00A9DA6D /* DateCasinoApp.swift */; };
+		068EB2DA2B83522A00A9DA6D /* FirstPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2D92B83522A00A9DA6D /* FirstPage.swift */; };
+		068EB2DC2B83522B00A9DA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068EB2DB2B83522B00A9DA6D /* Assets.xcassets */; };
+		068EB2DF2B83522B00A9DA6D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068EB2DE2B83522B00A9DA6D /* Preview Assets.xcassets */; };
+		068EB2EA2B8352A800A9DA6D /* ScrollableView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2E92B8352A800A9DA6D /* ScrollableView1.swift */; };
+		068EB2EC2B8352F700A9DA6D /* ScrollableView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2EB2B8352F700A9DA6D /* ScrollableView2.swift */; };
+		068EB2EE2B83530600A9DA6D /* ScrollableView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2ED2B83530600A9DA6D /* ScrollableView3.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		068EB2D42B83522A00A9DA6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 068EB2BA2B83522900A9DA6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 068EB2D12B83522A00A9DA6D;
+			remoteInfo = "DateCasino Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		068EB2E52B83522B00A9DA6D /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				068EB2D32B83522A00A9DA6D /* DateCasino Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		068EB2C22B83522900A9DA6D /* DateCasino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DateCasino.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		068EB2C52B83522900A9DA6D /* DateCasinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCasinoApp.swift; sourceTree = "<group>"; };
+		068EB2C72B83522900A9DA6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		068EB2C92B83522A00A9DA6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		068EB2CC2B83522A00A9DA6D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		068EB2D22B83522A00A9DA6D /* DateCasino Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DateCasino Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		068EB2D72B83522A00A9DA6D /* DateCasinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCasinoApp.swift; sourceTree = "<group>"; };
+		068EB2D92B83522A00A9DA6D /* FirstPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPage.swift; sourceTree = "<group>"; };
+		068EB2DB2B83522B00A9DA6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		068EB2DE2B83522B00A9DA6D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		068EB2E92B8352A800A9DA6D /* ScrollableView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView1.swift; sourceTree = "<group>"; };
+		068EB2EB2B8352F700A9DA6D /* ScrollableView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView2.swift; sourceTree = "<group>"; };
+		068EB2ED2B83530600A9DA6D /* ScrollableView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView3.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		068EB2BF2B83522900A9DA6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		068EB2CF2B83522A00A9DA6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		068EB2B92B83522900A9DA6D = {
+			isa = PBXGroup;
+			children = (
+				068EB2C42B83522900A9DA6D /* DateCasino */,
+				068EB2D62B83522A00A9DA6D /* DateCasino Watch App */,
+				068EB2C32B83522900A9DA6D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		068EB2C32B83522900A9DA6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				068EB2C22B83522900A9DA6D /* DateCasino.app */,
+				068EB2D22B83522A00A9DA6D /* DateCasino Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		068EB2C42B83522900A9DA6D /* DateCasino */ = {
+			isa = PBXGroup;
+			children = (
+				068EB2C52B83522900A9DA6D /* DateCasinoApp.swift */,
+				068EB2C72B83522900A9DA6D /* ContentView.swift */,
+				068EB2C92B83522A00A9DA6D /* Assets.xcassets */,
+				068EB2CB2B83522A00A9DA6D /* Preview Content */,
+			);
+			path = DateCasino;
+			sourceTree = "<group>";
+		};
+		068EB2CB2B83522A00A9DA6D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				068EB2CC2B83522A00A9DA6D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		068EB2D62B83522A00A9DA6D /* DateCasino Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				068EB2D72B83522A00A9DA6D /* DateCasinoApp.swift */,
+				068EB2D92B83522A00A9DA6D /* FirstPage.swift */,
+				068EB2E92B8352A800A9DA6D /* ScrollableView1.swift */,
+				068EB2EB2B8352F700A9DA6D /* ScrollableView2.swift */,
+				068EB2ED2B83530600A9DA6D /* ScrollableView3.swift */,
+				068EB2DB2B83522B00A9DA6D /* Assets.xcassets */,
+				068EB2DD2B83522B00A9DA6D /* Preview Content */,
+			);
+			path = "DateCasino Watch App";
+			sourceTree = "<group>";
+		};
+		068EB2DD2B83522B00A9DA6D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				068EB2DE2B83522B00A9DA6D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		068EB2C12B83522900A9DA6D /* DateCasino */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 068EB2E62B83522B00A9DA6D /* Build configuration list for PBXNativeTarget "DateCasino" */;
+			buildPhases = (
+				068EB2BE2B83522900A9DA6D /* Sources */,
+				068EB2BF2B83522900A9DA6D /* Frameworks */,
+				068EB2C02B83522900A9DA6D /* Resources */,
+				068EB2E52B83522B00A9DA6D /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				068EB2D52B83522A00A9DA6D /* PBXTargetDependency */,
+			);
+			name = DateCasino;
+			productName = DateCasino;
+			productReference = 068EB2C22B83522900A9DA6D /* DateCasino.app */;
+			productType = "com.apple.product-type.application";
+		};
+		068EB2D12B83522A00A9DA6D /* DateCasino Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 068EB2E22B83522B00A9DA6D /* Build configuration list for PBXNativeTarget "DateCasino Watch App" */;
+			buildPhases = (
+				068EB2CE2B83522A00A9DA6D /* Sources */,
+				068EB2CF2B83522A00A9DA6D /* Frameworks */,
+				068EB2D02B83522A00A9DA6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DateCasino Watch App";
+			productName = "DateCasino Watch App";
+			productReference = 068EB2D22B83522A00A9DA6D /* DateCasino Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		068EB2BA2B83522900A9DA6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					068EB2C12B83522900A9DA6D = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					068EB2D12B83522A00A9DA6D = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 068EB2BD2B83522900A9DA6D /* Build configuration list for PBXProject "DateCasino" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 068EB2B92B83522900A9DA6D;
+			productRefGroup = 068EB2C32B83522900A9DA6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				068EB2C12B83522900A9DA6D /* DateCasino */,
+				068EB2D12B83522A00A9DA6D /* DateCasino Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		068EB2C02B83522900A9DA6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				068EB2CD2B83522A00A9DA6D /* Preview Assets.xcassets in Resources */,
+				068EB2CA2B83522A00A9DA6D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		068EB2D02B83522A00A9DA6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				068EB2DF2B83522B00A9DA6D /* Preview Assets.xcassets in Resources */,
+				068EB2DC2B83522B00A9DA6D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		068EB2BE2B83522900A9DA6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				068EB2C82B83522900A9DA6D /* ContentView.swift in Sources */,
+				068EB2C62B83522900A9DA6D /* DateCasinoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		068EB2CE2B83522A00A9DA6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				068EB2EC2B8352F700A9DA6D /* ScrollableView2.swift in Sources */,
+				068EB2DA2B83522A00A9DA6D /* FirstPage.swift in Sources */,
+				068EB2EA2B8352A800A9DA6D /* ScrollableView1.swift in Sources */,
+				068EB2EE2B83530600A9DA6D /* ScrollableView3.swift in Sources */,
+				068EB2D82B83522A00A9DA6D /* DateCasinoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		068EB2D52B83522A00A9DA6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 068EB2D12B83522A00A9DA6D /* DateCasino Watch App */;
+			targetProxy = 068EB2D42B83522A00A9DA6D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		068EB2E02B83522B00A9DA6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		068EB2E12B83522B00A9DA6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		068EB2E32B83522B00A9DA6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DateCasino Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = XQMJRDV4LZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DateCasino;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.giuseppeolivari.prova.DateCasino;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.giuseppeolivari.prova.DateCasino.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		068EB2E42B83522B00A9DA6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DateCasino Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = XQMJRDV4LZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DateCasino;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.giuseppeolivari.prova.DateCasino;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.giuseppeolivari.prova.DateCasino.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		068EB2E72B83522B00A9DA6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DateCasino/Preview Content\"";
+				DEVELOPMENT_TEAM = XQMJRDV4LZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DateCasino;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.giuseppeolivari.prova.DateCasino;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		068EB2E82B83522B00A9DA6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DateCasino/Preview Content\"";
+				DEVELOPMENT_TEAM = XQMJRDV4LZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DateCasino;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.giuseppeolivari.prova.DateCasino;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		068EB2BD2B83522900A9DA6D /* Build configuration list for PBXProject "DateCasino" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				068EB2E02B83522B00A9DA6D /* Debug */,
+				068EB2E12B83522B00A9DA6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		068EB2E22B83522B00A9DA6D /* Build configuration list for PBXNativeTarget "DateCasino Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				068EB2E32B83522B00A9DA6D /* Debug */,
+				068EB2E42B83522B00A9DA6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		068EB2E62B83522B00A9DA6D /* Build configuration list for PBXNativeTarget "DateCasino" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				068EB2E72B83522B00A9DA6D /* Debug */,
+				068EB2E82B83522B00A9DA6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 068EB2BA2B83522900A9DA6D /* Project object */;
+}
