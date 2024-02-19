@@ -35,6 +35,7 @@ struct ScrollableView1: View {
                        .onTapGesture {
                                animateWithTimer(proxy: scrollView)
                            
+                           
                        }
                
                }
@@ -50,6 +51,7 @@ struct ScrollableView1: View {
            let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
                withAnimation(.linear) {
                    proxy.scrollTo(counter, anchor: .center)
+                   WKInterfaceDevice.current().play(.click)
                }
                counter += 1
                if counter >= .random(in: 50...100) {
