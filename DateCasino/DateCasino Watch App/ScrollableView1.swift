@@ -17,7 +17,7 @@ struct ScrollableView1: View {
         
         
         
-        Picker("Prova :",selection: $scrollText){
+       
             ScrollViewReader { scrollView in
                 ScrollView(showsIndicators: false){
                     
@@ -36,12 +36,13 @@ struct ScrollableView1: View {
                 .frame(height: 130)
                 
                 .onTapGesture {
+                    
                     animateWithTimer(proxy: scrollView)
                     
                 }
                 
             }
-        }//.focusBorderColor(color: .red)
+        //.focusBorderColor(color: .red)
         .foregroundColor(.green)
         Text(finalText1)
         
@@ -54,12 +55,15 @@ struct ScrollableView1: View {
         var counter = 0
         let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
             withAnimation(.linear) {
+                
                 proxy.scrollTo(counter, anchor: .center)
                 finalText1 = attr[arr[counter]]
                 WKInterfaceDevice.current().play(.click)
             }
             counter += 1
             if counter >= .random(in: 50...100) {
+                
+            
                 timer.invalidate()
             }
         }

@@ -21,7 +21,7 @@ struct FirstPage: View {
                    NavigationLink("Terza Categoria",destination: ScrollableView3())
                    
                }.foregroundStyle(.green)
-                   .font(.custom("LasVegas-Jackpot", size: 30))
+//                   .font(.custom("LasVegas-Jackpot", size: 30))
             
                    
                    
