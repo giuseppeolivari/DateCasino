@@ -55,7 +55,7 @@ struct ScrollableView1: View {
         var counter = 0
         let random = Int.random(in:50...100)
         let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
-            withAnimation(.linear) {
+            withAnimation(.default) {
                 
                 proxy.scrollTo(counter, anchor: .center)
                 finalText1 = attr[arr[counter]]
@@ -64,7 +64,7 @@ struct ScrollableView1: View {
             if counter < random {
                 counter+=1
             }else{
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(7), execute: {
                     timer.invalidate()
                 })
                 
