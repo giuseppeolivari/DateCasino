@@ -8,61 +8,67 @@
 import SwiftUI
 
 struct ScrollableView1: View {
+    
+    @State private var finalText1 = "Not get"
     @State private var scrollText = false
     var attr : [String] = ["primo", "secondo", "terzo","quarto","quinto","sesto"]
-       var body: some View {
-           
-           
-          
-           Picker("Prova :",selection: $scrollText){
-               ScrollViewReader { scrollView in
-                   ScrollView(showsIndicators: false){
-                   
-                   ForEach(0..<100) { index in
     let arr = (0..<100).map( {_ in Int.random(in: 0...5)} )
-                       
-                Text(attr[arr[index]])
-                           .font(.title2)
-                           .id(index)
-                       
-                       
-                   }
-                   }
-                   .foregroundColor(.green)
-                   .scrollDisabled(true)
-                   .frame(height: 130)
-                      
-                       .onTapGesture {
-                               animateWithTimer(proxy: scrollView)
-                           
-                           
-                       }
-               
-               }
-           }//.focusBorderColor(color: .red)
-               .foregroundColor(.green)
-       }
-       
-       func animateWithTimer(proxy: ScrollViewProxy) {
-           let count: Int = 10
-           let duration: Double = 1.0
-           let timeInterval: Double = (duration / Double(count))
-           var counter = 0
-           let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
-               withAnimation(.linear) {
-                   proxy.scrollTo(counter, anchor: .center)
-                   WKInterfaceDevice.current().play(.click)
-               }
-               counter += 1
-               if counter >= .random(in: 50...100) {
-                   timer.invalidate()
-               }
-           }
-           timer.fire()
-       }
+    var body: some View {
+        
+        
+        
+        Picker("Prova :",selection: $scrollText){
+            ScrollViewReader { scrollView in
+                ScrollView(showsIndicators: false){
+                    
+                    ForEach(0..<100) { index in
+                        
+                        Text(attr[arr[index]])
+                            .font(.title2)
+                            .id(index)
+                            
+                        
+                        
+                    }
+                }
+                .foregroundColor(.green)
+                .scrollDisabled(true)
+                .frame(height: 130)
+                
+                .onTapGesture {
+                    animateWithTimer(proxy: scrollView)
+                    
+                }
+                
+            }
+        }//.focusBorderColor(color: .red)
+        .foregroundColor(.green)
+        Text(finalText1)
+        
+    }
+    
+    func animateWithTimer(proxy: ScrollViewProxy) {
+        let count: Int = 10
+        let duration: Double = 1.0
+        let timeInterval: Double = (duration / Double(count))
+        var counter = 0
+        let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
+            withAnimation(.linear) {
+                proxy.scrollTo(counter, anchor: .center)
+                finalText1 = attr[arr[counter]]
+                WKInterfaceDevice.current().play(.click)
+            }
+            counter += 1
+            if counter >= .random(in: 50...100) {
+                timer.invalidate()
+            }
+        }
+        timer.fire()
+        
+    }
     
     
-   
+    
     
     
 }
