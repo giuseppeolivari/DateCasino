@@ -53,6 +53,7 @@ struct ScrollableView1: View {
         let duration: Double = 1.0
         let timeInterval: Double = (duration / Double(count))
         var counter = 0
+        let random = Int.random(in:50...100)
         let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
             withAnimation(.linear) {
                 
@@ -60,11 +61,13 @@ struct ScrollableView1: View {
                 finalText1 = attr[arr[counter]]
                 WKInterfaceDevice.current().play(.click)
             }
-            counter += 1
-            if counter >= .random(in: 50...100) {
+            if counter < random {
+                counter+=1
+            }else{
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+                    timer.invalidate()
+                })
                 
-            
-                timer.invalidate()
             }
         }
         timer.fire()
