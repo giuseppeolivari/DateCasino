@@ -11,7 +11,7 @@ import SwiftUI
 struct DateCasinoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Scrollable()
         }
     }
 }
