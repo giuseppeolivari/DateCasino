@@ -12,8 +12,9 @@ struct ScrollableView1: View {
     @State private var finalText1 = "Not get"
     @State private var scrollText = false
     @State private var boh = 0
+    @State private var touch = true
     var attr : [String] = ["primo", "secondo", "terzo","quarto","quinto","sesto"]
-    let arr = (0..<1000000000).map( {_ in Int.random(in: 0...5)} )
+    let arr = (0..<1000000).map( {_ in Int.random(in: 0...5)} )
     var body: some View {
         
         
@@ -22,7 +23,7 @@ struct ScrollableView1: View {
             ScrollViewReader { scrollView in
                 ScrollView(showsIndicators: false){
                     LazyVStack(){
-                        ForEach(0..<1000000000) { index in
+                        ForEach(0..<1000000) { index in
                             
                             Text(attr[arr[index]])
                                 .font(.title2)
@@ -39,8 +40,13 @@ struct ScrollableView1: View {
                 
                 
                 .onTapGesture {
+                    if touch {
+                        animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch)
+                        touch.toggle()
+                    }
+                    else {
                     
-                    animateWithTimer(proxy: scrollView, boh: self.boh)
+                    }
                     
                
                 }
@@ -52,7 +58,7 @@ struct ScrollableView1: View {
         
     }
     
-    func animateWithTimer(proxy: ScrollViewProxy, boh: Int) {
+    func animateWithTimer(proxy: ScrollViewProxy, boh: Int, touch : Bool) {
         let count: Int = 10
         let duration: Double = 1.0
         let timeInterval: Double = (duration / Double(count))
@@ -78,8 +84,9 @@ struct ScrollableView1: View {
                 
             }else{
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(7), execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
                     timer.invalidate()
+                    self.touch.toggle()
                 })
                 
             }
