@@ -20,15 +20,15 @@ struct ScrollableView1: View {
        
             ScrollViewReader { scrollView in
                 ScrollView(showsIndicators: false){
-                    
-                    ForEach(0..<100) { index in
-                        
-                        Text(attr[arr[index]])
-                            .font(.title2)
-                            .id(index)
+                    LazyVStack(){
+                        ForEach(0..<10000000) { index in
                             
-                        
-                        
+                            Text(attr[arr[index]])
+                                .font(.title2)
+                                .id(index)
+                            
+                            
+                        }
                     }
                 }
                 .foregroundColor(.green)
