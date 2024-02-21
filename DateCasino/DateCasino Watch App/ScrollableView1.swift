@@ -13,7 +13,7 @@ struct ScrollableView1: View {
     @State private var scrollText = false
     @State private var boh = 0
     @State private var touch = true
-    var attr : [String] = ["primo", "secondo", "terzo","quarto","quinto","sesto"]
+    var attr : [String] = ["first", "second", "third","fourth","fifth","sixth"]
     let arr = (0..<1000000).map( {_ in Int.random(in: 0...5)} )
     var body: some View {
         
