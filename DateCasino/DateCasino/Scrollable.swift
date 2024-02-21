@@ -14,6 +14,7 @@ struct Scrollable: View {
     @State private var finalText3 = "Not get"
     @State private var scrollText = false
     @State private var boh = 0
+    @State private var spinner = false
     @State private var touch1 = true
     @State private var touch2 = true
     @State private var touch3 = true
@@ -52,8 +53,19 @@ struct Scrollable: View {
                         .frame(height: 130)
                         
                         
-                        
-                        .onTapGesture {
+                        //PARTE DA CANCELLARE
+//                        .onTapGesture {
+//                            if touch1 {
+//                                animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch1)
+//                                touch1.toggle()
+//                            }
+//                            else {
+//                                
+//                            }
+//                            
+//                            
+//                        }
+                        Button("1"){
                             if touch1 {
                                 animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch1)
                                 touch1.toggle()
@@ -61,10 +73,7 @@ struct Scrollable: View {
                             else {
                                 
                             }
-                            
-                            
                         }
-                        
                         
                     }
                     //.focusBorderColor(color: .red)
@@ -174,8 +183,8 @@ struct Scrollable: View {
                 }
                 
                 //this will be the lever
-                Button("lever") {
-                    
+                Button("lever"){
+                    spinner.toggle()
                 }
                 
             }
