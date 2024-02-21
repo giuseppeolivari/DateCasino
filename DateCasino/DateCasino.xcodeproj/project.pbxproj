@@ -407,6 +407,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DateCasino-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = DateCasino;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.giuseppeolivari.DateCasino;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -438,6 +439,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DateCasino-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = DateCasino;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.giuseppeolivari.DateCasino;
 				LD_RUNPATH_SEARCH_PATHS = (
