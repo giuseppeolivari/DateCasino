@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WatchKit
 
 struct ScrollableView1: View {
     
@@ -50,6 +51,7 @@ struct ScrollableView1: View {
                     
                
                 }
+                
                 
             }
         //.focusBorderColor(color: .red)
