@@ -19,6 +19,7 @@
 		068EB2EA2B8352A800A9DA6D /* ScrollableView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2E92B8352A800A9DA6D /* ScrollableView1.swift */; };
 		068EB2EC2B8352F700A9DA6D /* ScrollableView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2EB2B8352F700A9DA6D /* ScrollableView2.swift */; };
 		068EB2EE2B83530600A9DA6D /* ScrollableView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2ED2B83530600A9DA6D /* ScrollableView3.swift */; };
+		069B927A2B860BBF00330CAA /* Scrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B92792B860BBF00330CAA /* Scrollable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		068EB2ED2B83530600A9DA6D /* ScrollableView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView3.swift; sourceTree = "<group>"; };
 		068EB2F32B835B6800A9DA6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		068EB2F72B835D4600A9DA6D /* DateCasino-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DateCasino-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		069B92792B860BBF00330CAA /* Scrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				068EB2F32B835B6800A9DA6D /* Info.plist */,
 				068EB2C52B83522900A9DA6D /* DateCasinoApp.swift */,
 				068EB2C72B83522900A9DA6D /* ContentView.swift */,
+				069B92792B860BBF00330CAA /* Scrollable.swift */,
 				068EB2C92B83522A00A9DA6D /* Assets.xcassets */,
 				068EB2CB2B83522A00A9DA6D /* Preview Content */,
 			);
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069B927A2B860BBF00330CAA /* Scrollable.swift in Sources */,
 				068EB2C82B83522900A9DA6D /* ContentView.swift in Sources */,
 				068EB2C62B83522900A9DA6D /* DateCasinoApp.swift in Sources */,
 			);
