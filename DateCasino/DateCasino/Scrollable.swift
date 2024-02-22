@@ -13,6 +13,7 @@ struct Scrollable: View {
     @State private var scrollText = false
     @State private var boh = 0
     @State private var touch = true
+    @State private var blockSpinn = false
     @Binding var spinn1 : Bool
    
     var attr1 : [String] = ["first", "second", "third","fourth","fifth","sixth"]
@@ -47,15 +48,19 @@ struct Scrollable: View {
                             .onChange(of: spinn1) { newValue in
                                             
                                             if newValue {
-                                                animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch)
-                                                self.spinn1.toggle()
-                                            }
+                                                
+                                                    if !blockSpinn{
+                                                        animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch)
+                                                        self.spinn1.toggle()
+                                                    
+                                                    }
+                                            } 
                                         }
                             
                             
                         }
-                        Button("test"){
-                            print("\(spinn1)")
+                        Button("Block"){
+                            blockSpinn.toggle()
                         }
                         
                     }
