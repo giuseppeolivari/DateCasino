@@ -12,7 +12,8 @@ struct Scrollable: View {
     @State private var finalText1 = "Not get"
     @State private var scrollText = false
     @State private var boh = 0
-    @Binding var spinn1 : Bool 
+    @State private var touch = true
+    @Binding var spinn1 : Bool
    
     var attr1 : [String] = ["first", "second", "third","fourth","fifth","sixth"]
 
@@ -43,7 +44,13 @@ struct Scrollable: View {
                             .frame(height: 130)
                             
                             
-                            
+                            .onChange(of: spinn1) { newValue in
+                                            
+                                            if newValue {
+                                                animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch)
+                                                self.spinn1.toggle()
+                                            }
+                                        }
                             
                             
                         }
@@ -84,7 +91,7 @@ struct Scrollable: View {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
                     timer.invalidate()
-                    self.spinn1.toggle()
+                    //self.spinn1.toggle()
                 })
                 
             }
