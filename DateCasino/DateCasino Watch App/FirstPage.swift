@@ -10,23 +10,33 @@ import Foundation
 import SwiftUI
 
 struct FirstPage: View {
-    
+    @State private var test = false
+    @State private var scrollAmount = 0.0
        var body: some View {
            
            
-           NavigationStack{
+       
                VStack{
-                   NavigationLink("Prima Categoria",destination: ScrollableView1())
-                   NavigationLink("Seconda Categoria",destination: ScrollableView2())
-                   NavigationLink("Terza Categoria",destination: ScrollableView3())
+                   ScrollableView1(test: $test)
+                   ScrollableView1(test: $test)
+                   ScrollableView1(test: $test)
                    
                }.foregroundStyle(.green)
 //                   .font(.custom("LasVegas-Jackpot", size: 30))
-            
+                   
+                   .focusable(true)
+                   .digitalCrownRotation($scrollAmount, from: -1, through: 0, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
+                   .scrollIndicators(.hidden)
+               
+                   .onChange(of: scrollAmount){
+                       if(scrollAmount == -1){
+                           test.toggle()
+                       }
+                   }
                    
                    
                
-           }
+           
            
            
            

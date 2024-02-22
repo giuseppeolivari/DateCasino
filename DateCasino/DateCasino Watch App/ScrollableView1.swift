@@ -13,7 +13,7 @@ struct ScrollableView1: View {
     @State private var finalText1 = "Not get"
     @State private var scrollText = false
     @State private var boh = 0
-    @State private var touch = true
+    @Binding var test : Bool
     var attr : [String] = ["first", "second", "third","fourth","fifth","sixth"]
     let arr = (0..<1000000).map( {_ in Int.random(in: 0...5)} )
     var body: some View {
@@ -36,31 +36,26 @@ struct ScrollableView1: View {
                 }
                 .foregroundColor(.green)
                 .scrollDisabled(true)
-                .frame(height: 130)
+                .frame(height: 35)
                 
                 
                 
-                .onTapGesture {
-                    if touch {
-                        animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch)
-                        touch.toggle()
-                    }
-                    else {
+                .onChange(of: test){
+                    newValue in
+                   
+                        animateWithTimer(proxy: scrollView, boh: self.boh)
                     
-                    }
-                    
-               
                 }
                 
                 
             }
         //.focusBorderColor(color: .red)
         .foregroundColor(.green)
-        Text(finalText1)
+   
         
     }
     
-    func animateWithTimer(proxy: ScrollViewProxy, boh: Int, touch : Bool) {
+    func animateWithTimer(proxy: ScrollViewProxy, boh: Int ) {
         let count: Int = 10
         let duration: Double = 1.0
         let timeInterval: Double = (duration / Double(count))
@@ -88,7 +83,7 @@ struct ScrollableView1: View {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
                     timer.invalidate()
-                    self.touch.toggle()
+                   
                 })
                 
             }
@@ -129,6 +124,6 @@ struct ScrollableView1: View {
 
 
 #Preview {
-    ScrollableView1()
+    ScrollableView1(test: .constant(false))
 }
 
