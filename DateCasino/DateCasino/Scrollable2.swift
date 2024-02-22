@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Scrollable2: View {
     
-    @State private var finalText1 = "Not get"
+    @Binding var finalText2: String
     @State private var scrollText = false
     @State private var boh = 0
     @State private var touch = true
@@ -62,6 +62,7 @@ struct Scrollable2: View {
                         Button("Block"){
                             blockSpinn2.toggle()
                         }
+                        Text(finalText2)
                         
                     }
         
@@ -83,7 +84,7 @@ struct Scrollable2: View {
                 proxy.scrollTo(counter, anchor: .center)
                 
                 //print("fin:\(fin)")
-                finalText1 = attr1[arr1[counter]]
+                finalText2 = attr1[arr1[counter]]
                 self.boh = counter
                 
                 
@@ -110,6 +111,6 @@ struct Scrollable2: View {
     
             }
                     #Preview {
-                        Scrollable2(spinn2: .constant(false))
+                        Scrollable2(finalText2: .constant("b"), spinn2: .constant(false))
                     }
                 
