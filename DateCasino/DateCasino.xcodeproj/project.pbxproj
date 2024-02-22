@@ -62,7 +62,7 @@
 		068EB2ED2B83530600A9DA6D /* ScrollableView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView3.swift; sourceTree = "<group>"; };
 		068EB2F32B835B6800A9DA6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		068EB2F72B835D4600A9DA6D /* DateCasino-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DateCasino-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
-		069B92792B860BBF00330CAA /* Scrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable.swift; sourceTree = "<group>"; };
+		069B92792B860BBF00330CAA /* Scrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable.swift; sourceTree = "<group>"; tabWidth = 17; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

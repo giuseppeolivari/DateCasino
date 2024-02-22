@@ -7,19 +7,26 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    
+    @State var spinn1 : Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-                .font(.custom("LasVegas-Jackpot", size: 30))
+        HStack {
+            Scrollable(spinn1: $spinn1)
+            Scrollable(spinn1: $spinn1)
+            Scrollable(spinn1: $spinn1)
+            Button("lever"){
+                spinn1.toggle()
+                print("\(spinn1)")
+            }
         }
         .padding()
+        
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(spinn1: false )
 }
