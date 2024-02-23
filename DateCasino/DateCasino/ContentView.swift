@@ -23,6 +23,8 @@ struct ContentView: View {
     @State  var blockSpinn2 = false
     @State  var blockSpinn3 = false
     
+    let leverPosition = []
+    
     var body: some View {
         ZStack{
         VStack{
