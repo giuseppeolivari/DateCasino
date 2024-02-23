@@ -7,11 +7,13 @@
 import SwiftUI
 
 struct AnimatedLeverView: View {
+    @State var action: () -> Void
     @State var leverPosition: Int = 0
     let leverPositions = ["lever1", "lever2", "lever3", "lever4", "lever5", "lever6", "lever7", "lever8" ]
     var body: some View {
         Button(action: {
             startAnimation()
+            action()
         }) {
             Image(leverPositions[leverPosition])
                 .resizable()
@@ -38,5 +40,5 @@ struct AnimatedLeverView: View {
 }
 
 #Preview {
-    AnimatedLeverView()
+    AnimatedLeverView(action: {})
 }
