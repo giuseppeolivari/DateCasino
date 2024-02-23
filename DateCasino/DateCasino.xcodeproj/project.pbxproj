@@ -22,6 +22,7 @@
 		069B927A2B860BBF00330CAA /* Scrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B92792B860BBF00330CAA /* Scrollable.swift */; };
 		069B92802B875DD500330CAA /* Scrollable2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B927F2B875DD500330CAA /* Scrollable2.swift */; };
 		069B92822B875DDF00330CAA /* Scrollable3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B92812B875DDF00330CAA /* Scrollable3.swift */; };
+		069B92862B88978400330CAA /* FinalAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B92852B88978400330CAA /* FinalAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		069B92792B860BBF00330CAA /* Scrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable.swift; sourceTree = "<group>"; tabWidth = 17; };
 		069B927F2B875DD500330CAA /* Scrollable2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable2.swift; sourceTree = "<group>"; };
 		069B92812B875DDF00330CAA /* Scrollable3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable3.swift; sourceTree = "<group>"; };
+		069B92852B88978400330CAA /* FinalAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				068EB2F32B835B6800A9DA6D /* Info.plist */,
 				068EB2C52B83522900A9DA6D /* DateCasinoApp.swift */,
 				068EB2C72B83522900A9DA6D /* ContentView.swift */,
+				069B92852B88978400330CAA /* FinalAnimation.swift */,
 				069B92792B860BBF00330CAA /* Scrollable.swift */,
 				069B927F2B875DD500330CAA /* Scrollable2.swift */,
 				069B92812B875DDF00330CAA /* Scrollable3.swift */,
@@ -266,6 +269,7 @@
 				069B92802B875DD500330CAA /* Scrollable2.swift in Sources */,
 				068EB2C82B83522900A9DA6D /* ContentView.swift in Sources */,
 				068EB2C62B83522900A9DA6D /* DateCasinoApp.swift in Sources */,
+				069B92862B88978400330CAA /* FinalAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
