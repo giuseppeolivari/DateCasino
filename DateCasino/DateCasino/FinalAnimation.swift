@@ -10,13 +10,15 @@ import SwiftUI
 struct FinalAnimation: View {
     
     @Binding  var isPresented : Bool
-    
+    @State var finalText0: String
+    @State var finalText2: String
+    @State var finalText3: String
     
     var body: some View {
         VStack{
            
             
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Text("\(finalText0) \(finalText2) \(finalText3)").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             
            
             
@@ -26,5 +28,5 @@ struct FinalAnimation: View {
 }
 
 #Preview {
-    FinalAnimation(isPresented: .constant(false))
+    FinalAnimation(isPresented: .constant(false), finalText0: "a", finalText2: "b", finalText3: "c")
 }

@@ -65,7 +65,7 @@ struct ContentView: View {
         
         // COSì APPARE SULLA VIEW
         if isPresented {
-            FinalAnimation(isPresented: $isPresented).onAppear {
+            FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3).onAppear {
                 Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
                     withAnimation(.easeInOut(duration: 1)) {
                         self.isPresented.toggle()
