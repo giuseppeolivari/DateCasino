@@ -19,13 +19,17 @@ struct ContentView: View {
     
     @State var isPresented : Bool = false
     
+    @State  var blockSpinn = false
+    @State  var blockSpinn2 = false
+    @State  var blockSpinn3 = false
+    
     var body: some View {
         ZStack{
         VStack{
             HStack {
-                Scrollable(finalText0: $finalText0, spinn1: $spinn1)
-                Scrollable2(finalText2: $finalText2, spinn2: $spinn2)
-                Scrollable3(finalText3: $finalText3, spinn3: $spinn3)
+                Scrollable(finalText0: $finalText0, blockSpinn: $blockSpinn, spinn1: $spinn1)
+                Scrollable2(finalText2: $finalText2,blockSpinn2: $blockSpinn2, spinn2: $spinn2)
+                Scrollable3(finalText3: $finalText3,blockSpinn3: $blockSpinn3, spinn3: $spinn3)
                 Button("lever"){
                     spinn1.toggle()
                     spinn2.toggle()
@@ -42,7 +46,12 @@ struct ContentView: View {
             Button(action: {
                 withAnimation {
                     isPresented.toggle()
+                    
+                    blockSpinn = true
+                    blockSpinn2 = true
+                    blockSpinn3 = true
                 }
+            
             }, label: {
                 VStack {
                     
@@ -64,6 +73,7 @@ struct ContentView: View {
         }
         
         // COSì APPARE SULLA VIEW
+            
         if isPresented {
             FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3).onAppear {
                 Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
@@ -85,5 +95,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(spinn1: false, spinn2: false, spinn3: false )
+    ContentView(spinn1: false, spinn2: false, spinn3: false, blockSpinn: false, blockSpinn2: false, blockSpinn3: false)
 }

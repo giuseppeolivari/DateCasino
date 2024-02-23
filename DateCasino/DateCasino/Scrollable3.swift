@@ -13,7 +13,7 @@ struct Scrollable3: View {
     @State private var scrollText = false
     @State private var boh = 0
     @State private var touch = true
-    @State private var blockSpinn3 = false
+    @Binding  var blockSpinn3 : Bool
     @Binding var spinn3 : Bool
    
     var attr1 : [String] = ["first", "second", "third","fourth","fifth","sixth"]
@@ -110,6 +110,6 @@ struct Scrollable3: View {
     
             }
                     #Preview {
-                        Scrollable3(finalText3: .constant("c"), spinn3: .constant(false))
+                        Scrollable3(finalText3: .constant("c"),blockSpinn3: .constant(false), spinn3: .constant(false))
                     }
                 
