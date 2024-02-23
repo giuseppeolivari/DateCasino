@@ -12,14 +12,14 @@ import SwiftUI
 struct FirstPage: View {
     @State private var test = false
     @State private var scrollAmount = 0.0
+    
        var body: some View {
            
            
        
                VStack{
                    ScrollableView1(test: $test)
-                   ScrollableView1(test: $test)
-                   ScrollableView1(test: $test)
+                   
                    
                }.foregroundStyle(.green)
 //                   .font(.custom("LasVegas-Jackpot", size: 30))

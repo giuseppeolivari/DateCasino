@@ -9,22 +9,20 @@ import SwiftUI
 import WatchKit
 
 struct ScrollableView1: View {
-    
+    @State private var test = false
+    @State private var scrollAmount = 0.0
     @State private var finalText1 = "Not get"
     @State private var scrollText = false
     @State private var boh = 0
-    @Binding var test : Bool
     var attr : [String] = ["first", "second", "third","fourth","fifth","sixth"]
-    let arr = (0..<1000000).map( {_ in Int.random(in: 0...5)} )
+    let arr = (0..<1000).map( {_ in Int.random(in: 0...5)} )
     var body: some View {
-        
-        
-        
        
+        VStack{
             ScrollViewReader { scrollView in
                 ScrollView(showsIndicators: false){
                     LazyVStack(){
-                        ForEach(0..<1000000) { index in
+                        ForEach(0..<1000) { index in
                             
                             Text(attr[arr[index]])
                                 .font(.title2)
@@ -37,24 +35,107 @@ struct ScrollableView1: View {
                 .foregroundColor(.green)
                 .scrollDisabled(true)
                 .frame(height: 35)
-                
-                
-                
-                .onChange(of: test){
-                    newValue in
-                   
+                .focusable(true)
+                .digitalCrownRotation($scrollAmount, from: -1, through: 0, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
+                .scrollIndicators(.hidden)
+            
+                .onChange(of: scrollAmount){
+                    if(scrollAmount == -1){
                         animateWithTimer(proxy: scrollView, boh: self.boh)
-                    
+                        
+                    }
                 }
+                
+//                .onChange(of: test){
+//                    newValue in
+//
+//                        animateWithTimer(proxy: scrollView, boh: self.boh)
+//
+//                }
                 
                 
             }
-        //.focusBorderColor(color: .red)
-        .foregroundColor(.green)
-   
-        
+            ScrollViewReader { scrollView in
+                ScrollView(showsIndicators: false){
+                    LazyVStack(){
+                        ForEach(0..<1000) { index in
+                            
+                            Text(attr[arr[index]])
+                                .font(.title2)
+                                .id(index)
+                            
+                            
+                        }
+                    }
+                }
+                .foregroundColor(.green)
+                .scrollDisabled(true)
+                .frame(height: 35)
+                .focusable(true)
+                .digitalCrownRotation($scrollAmount, from: -1, through: 0, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
+                .scrollIndicators(.hidden)
+            
+                .onChange(of: scrollAmount){
+                    if(scrollAmount == -1){
+                        animateWithTimer(proxy: scrollView, boh: self.boh)
+                        
+                    }
+                }
+                
+//                .onChange(of: test){
+//                    newValue in
+//
+//                        animateWithTimer(proxy: scrollView, boh: self.boh)
+//
+//                }
+                
+                
+            }
+            
+            ScrollViewReader { scrollView in
+                ScrollView(showsIndicators: false){
+                    LazyVStack(){
+                        ForEach(0..<1000) { index in
+                            
+                            Text(attr[arr[index]])
+                                .font(.title2)
+                                .id(index)
+                            
+                            
+                        }
+                    }
+                }
+                .foregroundColor(.green)
+                .scrollDisabled(true)
+                .frame(height: 35)
+                .focusable(true)
+                .digitalCrownRotation($scrollAmount, from: -1, through: 0, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
+                .scrollIndicators(.hidden)
+            
+                .onChange(of: scrollAmount){
+                    if(scrollAmount == -1){
+                        animateWithTimer(proxy: scrollView, boh: self.boh)
+                        
+                    }
+                }
+                
+//                .onChange(of: test){
+//                    newValue in
+//
+//                        animateWithTimer(proxy: scrollView, boh: self.boh)
+//
+//                }
+                
+                
+            }
+       
+            
+        }.foregroundStyle(.green)
+//                   .font(.custom("LasVegas-Jackpot", size: 30))
+            
+           
+            
     }
-    
     func animateWithTimer(proxy: ScrollViewProxy, boh: Int ) {
         let count: Int = 10
         let duration: Double = 1.0
@@ -62,7 +143,7 @@ struct ScrollableView1: View {
         var counter = self.boh
         
 //        print("\(counter)")
-        let random = Int.random(in:(counter + 50)...(counter+100))
+        let random = Int.random(in:(counter + 30)...(counter+70))
 //        let random = Int.random(in: 0...50)
         let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
             withAnimation(.default) {
@@ -81,20 +162,13 @@ struct ScrollableView1: View {
                 
             }else{
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
-                    timer.invalidate()
-                   
-                })
+                timer.invalidate()
                 
             }
         }
         timer.fire()
       
     }
-    
-    
-    
-    
     
 }
 //extension Picker {
@@ -124,6 +198,6 @@ struct ScrollableView1: View {
 
 
 #Preview {
-    ScrollableView1(test: .constant(false))
+    ScrollableView1()
 }
 

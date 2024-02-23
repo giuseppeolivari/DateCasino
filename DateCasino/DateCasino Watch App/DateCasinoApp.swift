@@ -11,7 +11,7 @@ import SwiftUI
 struct DateCasino_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            FirstPage()
+            ScrollableView1()
         }
     }
 }
