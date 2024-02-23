@@ -16,21 +16,70 @@ struct ContentView: View {
     @State var finalText0 = "a"
     @State var finalText2 = "b"
     @State var finalText3 = "c"
+    
+    @State var isPresented : Bool = false
+    
     var body: some View {
-        HStack {
-            Scrollable(finalText0: $finalText0, spinn1: $spinn1)
-            Scrollable2(finalText2: $finalText2, spinn2: $spinn2)
-            Scrollable3(finalText3: $finalText3, spinn3: $spinn3)
-            Button("lever"){
-                spinn1.toggle()
-                spinn2.toggle()
-                spinn3.toggle()
-                
-                print("\(spinn1)")
+        ZStack{
+        VStack{
+            HStack {
+                Scrollable(finalText0: $finalText0, spinn1: $spinn1)
+                Scrollable2(finalText2: $finalText2, spinn2: $spinn2)
+                Scrollable3(finalText3: $finalText3, spinn3: $spinn3)
+                Button("lever"){
+                    spinn1.toggle()
+                    spinn2.toggle()
+                    spinn3.toggle()
+                    
+                    print("\(spinn1)")
+                }
+                //Text(finalText0)
             }
-            //Text(finalText0)
+            .padding()
+            
+            
+            
+            Button(action: {
+                withAnimation {
+                    isPresented.toggle()
+                }
+            }, label: {
+                VStack {
+                    
+                    Text("get")
+                }
+                
+                .accessibilityLabel("tap to get")
+            })
+            .accessibilityRemoveTraits(.isButton)
+            
+            
+            /*
+             COSì APPARE COME MODALE
+             .fullScreenCover(isPresented: $isPresented) {
+             FinalAnimation(isPresented: $isPresented)
+             
+             }
+             */
         }
-        .padding()
+        
+        // COSì APPARE SULLA VIEW
+        if isPresented {
+            FinalAnimation(isPresented: $isPresented).onAppear {
+                Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+                    withAnimation(.easeInOut(duration: 1)) {
+                        self.isPresented.toggle()
+                    }
+                }
+            }//.transition(.scale)
+        }
+        
+        
+        
+        
+        
+        
+    }
         
     }
 }

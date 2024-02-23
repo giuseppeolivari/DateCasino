@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct FinalAnimation: View {
+    
+    @Binding  var isPresented : Bool
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+           
+            
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            
+           
+            
+            
+        }.background(Color(.red))
     }
 }
 
 #Preview {
-    FinalAnimation()
+    FinalAnimation(isPresented: .constant(false))
 }
