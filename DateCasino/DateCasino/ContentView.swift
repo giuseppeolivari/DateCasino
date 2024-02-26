@@ -16,7 +16,6 @@ struct ContentView: View {
     @State var finalText0 = "a"
     @State var finalText2 = "b"
     @State var finalText3 = "c"
-    
     @State var isPresented : Bool = false
     
     @State  var blockSpinn = false
@@ -37,6 +36,7 @@ struct ContentView: View {
                                         print("\(spinn1)")
                                     }) {                                        
                                         AnimatedLeverView(action: toggleSpins)
+                                        
                                     }
                 //Text(finalText0)
             }

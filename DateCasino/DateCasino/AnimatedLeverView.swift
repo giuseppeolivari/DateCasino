@@ -7,13 +7,19 @@
 import SwiftUI
 
 struct AnimatedLeverView: View {
+    @State private var animationIsOn = false
     @State var action: () -> Void
     @State var leverPosition: Int = 0
     let leverPositions = ["lever1", "lever2", "lever3", "lever4", "lever5", "lever6", "lever7", "lever8" ]
     var body: some View {
         Button(action: {
-            startAnimation()
-            action()
+            if(!animationIsOn){
+                animationIsOn.toggle()
+                startAnimation()
+                action()
+            }else{
+                
+            }
         }) {
             Image(leverPositions[leverPosition])
                 .resizable()
@@ -23,7 +29,8 @@ struct AnimatedLeverView: View {
 
     }
     func startAnimation() {
-        var counter = 0
+       
+        var counter = 1
         
         let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             withAnimation(.default) {
@@ -33,9 +40,23 @@ struct AnimatedLeverView: View {
         }
         
         // Stop the animation after a certain number of iterations
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             timer.invalidate()
+            let timer2 = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+                withAnimation(.default) {
+                    leverPosition = counter % leverPositions.count
+                }
+                counter -= 1
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                timer2.invalidate()
+                animationIsOn.toggle()
+            }
+
         }
+        
+        
+        
     }
 }
 

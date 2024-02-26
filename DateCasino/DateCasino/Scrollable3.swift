@@ -12,7 +12,7 @@ struct Scrollable3: View {
     @Binding var finalText3: String
     @State private var scrollText = false
     @State private var boh = 0
-    @State private var touch = true
+    @State private var touch3 = false
     @Binding  var blockSpinn3 : Bool
     @Binding var spinn3 : Bool
    
@@ -49,9 +49,13 @@ struct Scrollable3: View {
                                             
                                             if newValue {
                                                 
-                                                    if !blockSpinn3{
-                                                        animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch)
+                                                    if !blockSpinn3 {
+                                                        blockSpinn3.toggle()
+                                                        print("\(blockSpinn3)")
+                                                        animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch3)
+                                                        
                                                         self.spinn3.toggle()
+                                                        
                                                     
                                                     }
                                             }
@@ -96,8 +100,12 @@ struct Scrollable3: View {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
                     timer.invalidate()
+                 
                     //self.spinn1.toggle()
                 })
+                
+                blockSpinn3.toggle()
+                print("\(blockSpinn3)")
                 
             }
         }
