@@ -26,14 +26,14 @@ struct AnimatedLeverView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
         }
-
+        
     }
     func startAnimation() {
-       
+        
         var counter = 1
         
         let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            withAnimation(.default) {
+            withAnimation(.none) {
                 leverPosition = counter % leverPositions.count
             }
             counter += 1
@@ -43,7 +43,7 @@ struct AnimatedLeverView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             timer.invalidate()
             let timer2 = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-                withAnimation(.default) {
+                withAnimation(.none) {
                     leverPosition = counter % leverPositions.count
                 }
                 counter -= 1
@@ -52,7 +52,7 @@ struct AnimatedLeverView: View {
                 timer2.invalidate()
                 animationIsOn.toggle()
             }
-
+            
         }
         
         

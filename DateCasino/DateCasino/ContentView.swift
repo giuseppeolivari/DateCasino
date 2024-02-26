@@ -22,82 +22,82 @@ struct ContentView: View {
     @State  var blockSpinn2 = false
     @State  var blockSpinn3 = false
     
-   
+    
     
     var body: some View {
         ZStack{
-        VStack{
-            HStack {
-                Scrollable(finalText0: $finalText0, blockSpinn: $blockSpinn, spinn1: $spinn1)
-                Scrollable2(finalText2: $finalText2,blockSpinn2: $blockSpinn2, spinn2: $spinn2)
-                Scrollable3(finalText3: $finalText3,blockSpinn3: $blockSpinn3, spinn3: $spinn3)
-                Button(action: {
-                                        toggleSpins()
-                                        print("\(spinn1)")
-                                    }) {                                        
-                                        AnimatedLeverView(action: toggleSpins)
-                                        
-                                    }
-                //Text(finalText0)
-            }
-            .padding()
-            
-            
-            
-            Button(action: {
-                withAnimation {
-                    isPresented.toggle()
-                    
-                    blockSpinn = true
-                    blockSpinn2 = true
-                    blockSpinn3 = true
-                }
-            
-            }, label: {
-                VStack {
-                    
-                    Text("get")
-                }
-                
-                .accessibilityLabel("tap to get")
-            })
-            .accessibilityRemoveTraits(.isButton)
-            
-            
-            /*
-             COSì APPARE COME MODALE
-             .fullScreenCover(isPresented: $isPresented) {
-             FinalAnimation(isPresented: $isPresented)
-             
-             }
-             */
-        }
-        
-        // COSì APPARE SULLA VIEW
-            
-        if isPresented {
-            FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3).onAppear {
-                Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
-                    withAnimation(.easeInOut(duration: 1)) {
-                        self.isPresented.toggle()
+            VStack{
+                HStack {
+                    Scrollable(finalText0: $finalText0, blockSpinn: $blockSpinn, spinn1: $spinn1)
+                    Scrollable2(finalText2: $finalText2,blockSpinn2: $blockSpinn2, spinn2: $spinn2)
+                    Scrollable3(finalText3: $finalText3,blockSpinn3: $blockSpinn3, spinn3: $spinn3)
+                    Button(action: {
+                        toggleSpins()
+                        print("\(spinn1)")
+                    }) {                                        
+                        AnimatedLeverView(action: toggleSpins)
+                        
                     }
+                    //Text(finalText0)
                 }
-            }//.transition(.scale)
+                .padding()
+                
+                
+                
+                Button(action: {
+                    withAnimation {
+                        isPresented.toggle()
+                        
+                        blockSpinn = true
+                        blockSpinn2 = true
+                        blockSpinn3 = true
+                    }
+                    
+                }, label: {
+                    VStack {
+                        
+                        Text("get")
+                    }
+                    
+                    .accessibilityLabel("tap to get")
+                })
+                .accessibilityRemoveTraits(.isButton)
+                
+                
+                /*
+                 COSì APPARE COME MODALE
+                 .fullScreenCover(isPresented: $isPresented) {
+                 FinalAnimation(isPresented: $isPresented)
+                 
+                 }
+                 */
+            }
+            
+            // COSì APPARE SULLA VIEW
+            
+            if isPresented {
+                FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3).onAppear {
+                    Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+                        withAnimation(.easeInOut(duration: 1)) {
+                            self.isPresented.toggle()
+                        }
+                    }
+                }//.transition(.scale)
+            }
+            
+            
+            
+            
+            
+            
         }
-        
-        
-        
-        
-        
-        
-    }
         
     }
     func toggleSpins() {
-            spinn1.toggle()
-            spinn2.toggle()
-            spinn3.toggle()
-        }
+        spinn1.toggle()
+        spinn2.toggle()
+        spinn3.toggle()
+    }
 }
 
 #Preview {

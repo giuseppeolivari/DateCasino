@@ -16,11 +16,11 @@ struct FinalAnimation: View {
     
     var body: some View {
         VStack{
-           
+            
             
             Text("\(finalText0) \(finalText2) \(finalText3)").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             
-           
+            
             
             
         }.background(Color(.red))
