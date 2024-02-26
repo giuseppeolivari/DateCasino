@@ -89,6 +89,9 @@ struct ContentView: View {
                     Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
                         withAnimation(.easeInOut(duration: 1)) {
                             self.isPresented.toggle()
+                            spinn1 = false
+                            spinn2 = false
+                            spinn3 = false
                         }
                     }
                 }//.transition(.scale)
