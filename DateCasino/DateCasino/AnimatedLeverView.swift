@@ -7,13 +7,16 @@
 import SwiftUI
 
 struct AnimatedLeverView: View {
+    @Binding var spinn1 : Bool
+    @Binding var spinn2 : Bool
+    @Binding var spinn3 : Bool
     @State private var animationIsOn = false
     @State var action: () -> Void
     @State var leverPosition: Int = 0
     let leverPositions = ["lever1", "lever2", "lever3", "lever4", "lever5", "lever6", "lever7", "lever8" ]
     var body: some View {
         Button(action: {
-            if(!animationIsOn){
+            if(!animationIsOn && !spinn1 && !spinn2 && !spinn3){
                 animationIsOn.toggle()
                 startAnimation()
                 action()
@@ -61,5 +64,5 @@ struct AnimatedLeverView: View {
 }
 
 #Preview {
-    AnimatedLeverView(action: {})
+    AnimatedLeverView(spinn1: .constant(false),spinn2: .constant(false),spinn3: .constant(false),action: {})
 }
