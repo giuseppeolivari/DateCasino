@@ -53,7 +53,7 @@ struct Scrollable2: View {
                             print("touch2: \(touch2)")
                             self.touch2.toggle()
                             animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch2)
-                            self.spinn2.toggle()
+                            //self.spinn2.toggle()
 //                            print("touch2: \(touch2)")
                             
                         }

@@ -26,6 +26,9 @@ struct ContentView: View {
     
     var body: some View {
         ZStack{
+            Image("background")
+                .resizable()
+                .ignoresSafeArea()
             VStack{
                 HStack {
                     Scrollable(finalText0: $finalText0, blockSpinn: $blockSpinn, spinn1: $spinn1)
@@ -48,9 +51,9 @@ struct ContentView: View {
                     withAnimation {
                         isPresented.toggle()
                         
-                        blockSpinn = true
-                        blockSpinn2 = true
-                        blockSpinn3 = true
+//                        blockSpinn = true
+//                        blockSpinn2 = true
+//                        blockSpinn3 = true
                     }
                     
                 }, label: {
