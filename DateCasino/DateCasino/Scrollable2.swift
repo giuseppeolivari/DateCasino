@@ -52,6 +52,7 @@ struct Scrollable2: View {
                             animationIsOn.toggle()
                             print("animationIsOn2 start: \(animationIsOn)")
                             animateWithTimer(proxy: scrollView, boh: boh)
+                            spinn2.toggle()
                         }
                     }
                 }
