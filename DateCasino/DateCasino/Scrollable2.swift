@@ -48,17 +48,11 @@ struct Scrollable2: View {
                 .onChange(of: spinn2) { newValue in
                     
                     if newValue {
-                        animationIsOn.toggle()
-                        print("animationIsOn2 start: \(animationIsOn)")
-                        animateWithTimer(proxy: scrollView, boh: boh)
-//                        if !blockSpinn2 && !animationIsOn{
-////                            print("touch start2: \(animationIsOn)")
-//                            animationIsOn.toggle()
-//                            print("animationIsOn2 start: \(animationIsOn)")
-//                            animateWithTimer(proxy: scrollView, boh: boh)
-//                            
-//                            
-//                        }
+                        if !animationIsOn{
+                            animationIsOn.toggle()
+                            print("animationIsOn2 start: \(animationIsOn)")
+                            animateWithTimer(proxy: scrollView, boh: boh)
+                        }
                     }
                 }
                 
@@ -104,7 +98,7 @@ struct Scrollable2: View {
                     if self.animationIsOn == true{
                         self.animationIsOn.toggle()
                         print("animationIsOn2: \(self.animationIsOn)")
-                        print ("counter: \(counter)  random \(random)")
+                        
                     }
                 })
                 
