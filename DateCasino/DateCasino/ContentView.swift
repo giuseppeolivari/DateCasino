@@ -18,9 +18,9 @@ struct ContentView: View {
     @State var finalText3 = "c"
     @State var isPresented : Bool = false
     
-    @State  var blockSpinn = false
-    @State  var blockSpinn2 = false
-    @State  var blockSpinn3 = false
+    //@State  var blockSpinn = false
+    //@State  var blockSpinn2 = false
+   // @State  var blockSpinn3 = false
     
     
     
@@ -31,9 +31,9 @@ struct ContentView: View {
                 .ignoresSafeArea()
             VStack{
                 HStack {
-                    Scrollable(finalText0: $finalText0, blockSpinn: $blockSpinn, spinn1: $spinn1)
-                    Scrollable2(finalText2: $finalText2, blockSpinn2: $blockSpinn2, spinn2: $spinn2)
-                    Scrollable3(finalText3: $finalText3, blockSpinn3: $blockSpinn3, spinn3: $spinn3)
+                    Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
+                    Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
+                    Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
                     Button(action: {
 //                        toggleSpins()
 //                        print("\(spinn1)")
@@ -104,5 +104,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(spinn1: false, spinn2: false, spinn3: false, blockSpinn: false, blockSpinn2: false, blockSpinn3: false)
+    ContentView(spinn1: false, spinn2: false, spinn3: false/*, blockSpinn: false, blockSpinn2: false, blockSpinn3: false*/)
 }

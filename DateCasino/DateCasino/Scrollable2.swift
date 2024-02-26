@@ -13,7 +13,7 @@ struct Scrollable2: View {
     @State private var scrollText = false
     @State private var boh = 0
     @State private var animationIsOn = false
-    @Binding  var blockSpinn2 : Bool
+    //@Binding  var blockSpinn2 : Bool
     @Binding var spinn2 : Bool
     
     var attr1 : [String] = ["first", "second", "third","fourth","fifth","sixth"]
@@ -48,25 +48,27 @@ struct Scrollable2: View {
                 .onChange(of: spinn2) { newValue in
                     
                     if newValue {
-                        
-                        if !blockSpinn2 && !animationIsOn{
-//                            print("touch start2: \(animationIsOn)")
-                            self.animationIsOn.toggle()
-                            print("animationIsOn2 start: \(animationIsOn)")
-                            animateWithTimer(proxy: scrollView, boh: self.boh)
-                            
-                            
-                        }
+                        self.animationIsOn.toggle()
+                        print("animationIsOn2 start: \(animationIsOn)")
+                        animateWithTimer(proxy: scrollView, boh: self.boh)
+//                        if !blockSpinn2 && !animationIsOn{
+////                            print("touch start2: \(animationIsOn)")
+//                            self.animationIsOn.toggle()
+//                            print("animationIsOn2 start: \(animationIsOn)")
+//                            animateWithTimer(proxy: scrollView, boh: self.boh)
+//                            
+//                            
+//                        }
                     }
                 }
                 
                 
             }
-            Button("Block"){
-                blockSpinn2.toggle()
-            }
-            Text(finalText2)
-            
+//            Button("Block"){
+//                blockSpinn2.toggle()
+//            }
+//            Text(finalText2)
+//            
         }
         
         
@@ -117,6 +119,6 @@ struct Scrollable2: View {
     
 }
 #Preview {
-    Scrollable2(finalText2: .constant("b"),blockSpinn2: .constant(false), spinn2: .constant(false))
+    Scrollable2(finalText2: .constant("b")/*,blockSpinn2: .constant(false)*/, spinn2: .constant(false))
 }
 

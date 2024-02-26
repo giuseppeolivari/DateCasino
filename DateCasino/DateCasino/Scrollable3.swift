@@ -13,7 +13,7 @@ struct Scrollable3: View {
     @State private var scrollText = false
     @State private var boh = 0
     @State private var animationIsOn = false
-    @Binding  var blockSpinn3 : Bool
+    //@Binding  var blockSpinn3 : Bool
     @Binding var spinn3 : Bool
     
     var attr1 : [String] = ["first", "second", "third","fourth","fifth","sixth"]
@@ -48,26 +48,28 @@ struct Scrollable3: View {
                 .onChange(of: spinn3) { newValue in
                     
                     if newValue {
-                        
-                        if !blockSpinn3 && !animationIsOn {
-//                            print("touch start3: \(animationIsOn)")
-                            self.animationIsOn.toggle()
-                            print("animationIsOn3 start: \(animationIsOn)")
-                            animateWithTimer(proxy: scrollView, boh: self.boh)
-                            
-
-                            
-                            
-                        }
+                        self.animationIsOn.toggle()
+                        print("animationIsOn3 start: \(animationIsOn)")
+                        animateWithTimer(proxy: scrollView, boh: self.boh)
+//                        if !blockSpinn3 && !animationIsOn {
+////                            print("touch start3: \(animationIsOn)")
+//                            self.animationIsOn.toggle()
+//                            print("animationIsOn3 start: \(animationIsOn)")
+//                            animateWithTimer(proxy: scrollView, boh: self.boh)
+//                            
+//
+//                            
+//                            
+//                        }
                     }
                 }
                 
                 
             }
-            Button("Block"){
-                blockSpinn3.toggle()
-            }
-            Text(finalText3)
+//            Button("Block"){
+//                blockSpinn3.toggle()
+//            }
+//            Text(finalText3)
         }
         
         
@@ -121,6 +123,6 @@ struct Scrollable3: View {
     
 }
 #Preview {
-    Scrollable3(finalText3: .constant("c"),blockSpinn3: .constant(false), spinn3: .constant(false))
+    Scrollable3(finalText3: .constant("c")/*,blockSpinn3: .constant(false)*/, spinn3: .constant(false))
 }
 
