@@ -51,9 +51,9 @@ struct Scrollable2: View {
                         
                         if !blockSpinn2 && !animationIsOn{
 //                            print("touch start2: \(animationIsOn)")
-                            self.animationIsOn.toggle()
+                            animationIsOn.toggle()
                             print("animationIsOn2 start: \(animationIsOn)")
-                            animateWithTimer(proxy: scrollView, boh: self.boh)
+                            animateWithTimer(proxy: scrollView, boh: boh)
                             
                             
                         }
@@ -76,7 +76,7 @@ struct Scrollable2: View {
         let count: Int = 10
         let duration: Double = 1.0
         let timeInterval: Double = (duration / Double(count))
-        var counter = self.boh
+        var counter = boh
         
         //        print("\(counter)")
         let random = Int.random(in:(counter + 50)...(counter+100))
@@ -97,12 +97,12 @@ struct Scrollable2: View {
                 counter+=1
                 
             }else{
-                
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
                     timer.invalidate()
                     if self.animationIsOn == true{
                         self.animationIsOn.toggle()
                         print("animationIsOn2: \(self.animationIsOn)")
+                        print ("counter: \(counter)  random \(random)")
                     }
                 })
                 
