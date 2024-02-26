@@ -12,7 +12,7 @@ struct Scrollable: View {
     @Binding var finalText0: String
     @State private var scrollText = false
     @State private var boh = 0
-    @State private var touch = false
+    @State private var animationIsOn = false
     @Binding var blockSpinn : Bool
     @Binding var spinn1 : Bool
     
@@ -49,12 +49,13 @@ struct Scrollable: View {
                     
                     if newValue {
                         
-                        if !blockSpinn /*&& !touch */{
-//                            print("touch: \(touch)")
-//                            self.touch.toggle()
-                            animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch)
-                            self.spinn1.toggle()
-//                            print("touch: \(touch)")
+                        if !blockSpinn && !animationIsOn {
+//                            print("touch start: \(animationIsOn)")
+                            self.animationIsOn.toggle()
+                            print("animationIsOn start: \(animationIsOn)")
+                            animateWithTimer(proxy: scrollView, boh: self.boh)
+                            
+                            
                             
                         }
                     }
@@ -71,7 +72,7 @@ struct Scrollable: View {
         
     }
     
-    func animateWithTimer(proxy: ScrollViewProxy, boh: Int, touch : Bool) {
+    func animateWithTimer(proxy: ScrollViewProxy, boh: Int) {
         let count: Int = 10
         let duration: Double = 1.0
         let timeInterval: Double = (duration / Double(count))
@@ -99,10 +100,12 @@ struct Scrollable: View {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
                     timer.invalidate()
-                    
+                    if self.animationIsOn == true{
+                        self.animationIsOn.toggle()
+                        print("animationIsOn: \(self.animationIsOn)")
+                    }
                 })
-//                self.touch.toggle()
-//                print("touch: \(touch)")
+                
                 
             }
         }

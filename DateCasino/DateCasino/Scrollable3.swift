@@ -12,7 +12,7 @@ struct Scrollable3: View {
     @Binding var finalText3: String
     @State private var scrollText = false
     @State private var boh = 0
-    @State private var touch3 = false
+    @State private var animationIsOn = false
     @Binding  var blockSpinn3 : Bool
     @Binding var spinn3 : Bool
     
@@ -49,12 +49,13 @@ struct Scrollable3: View {
                     
                     if newValue {
                         
-                        if !blockSpinn3 {
-//                            blockSpinn3.toggle()
-//                            print("\(blockSpinn3)")
-                            animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch3)
+                        if !blockSpinn3 && !animationIsOn {
+//                            print("touch start3: \(animationIsOn)")
+                            self.animationIsOn.toggle()
+                            print("animationIsOn3 start: \(animationIsOn)")
+                            animateWithTimer(proxy: scrollView, boh: self.boh)
                             
-                            self.spinn3.toggle()
+
                             
                             
                         }
@@ -72,7 +73,7 @@ struct Scrollable3: View {
         
     }
     
-    func animateWithTimer(proxy: ScrollViewProxy, boh: Int, touch : Bool) {
+    func animateWithTimer(proxy: ScrollViewProxy, boh: Int) {
         let count: Int = 10
         let duration: Double = 1.0
         let timeInterval: Double = (duration / Double(count))
@@ -100,12 +101,14 @@ struct Scrollable3: View {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
                     timer.invalidate()
+                    if self.animationIsOn == true{
+                        self.animationIsOn.toggle()
+                        print("animationIsOn3: \(self.animationIsOn)")
+                    }
                     
-                    //self.spinn1.toggle()
                 })
                 
-//                blockSpinn3.toggle()
-//                print("\(blockSpinn3)")
+                
                 
             }
         }

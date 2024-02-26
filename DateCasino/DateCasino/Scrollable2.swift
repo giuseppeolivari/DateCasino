@@ -12,7 +12,7 @@ struct Scrollable2: View {
     @Binding var finalText2: String
     @State private var scrollText = false
     @State private var boh = 0
-    @State private var touch2 = false
+    @State private var animationIsOn = false
     @Binding  var blockSpinn2 : Bool
     @Binding var spinn2 : Bool
     
@@ -49,12 +49,12 @@ struct Scrollable2: View {
                     
                     if newValue {
                         
-                        if !blockSpinn2 /*&& !touch2*/{
-                            print("touch2: \(touch2)")
-                            self.touch2.toggle()
-                            animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch2)
-                            self.spinn2.toggle()
-//                            print("touch2: \(touch2)")
+                        if !blockSpinn2 && !animationIsOn{
+//                            print("touch start2: \(animationIsOn)")
+                            self.animationIsOn.toggle()
+                            print("animationIsOn2 start: \(animationIsOn)")
+                            animateWithTimer(proxy: scrollView, boh: self.boh)
+                            
                             
                         }
                     }
@@ -72,7 +72,7 @@ struct Scrollable2: View {
         
     }
     
-    func animateWithTimer(proxy: ScrollViewProxy, boh: Int, touch : Bool) {
+    func animateWithTimer(proxy: ScrollViewProxy, boh: Int) {
         let count: Int = 10
         let duration: Double = 1.0
         let timeInterval: Double = (duration / Double(count))
@@ -100,9 +100,10 @@ struct Scrollable2: View {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
                     timer.invalidate()
-//                    self.touch2.toggle()
-//                    print("touch2: \(touch2)")
-                    //self.spinn1.toggle()
+                    if self.animationIsOn == true{
+                        self.animationIsOn.toggle()
+                        print("animationIsOn2: \(self.animationIsOn)")
+                    }
                 })
                 
             }
