@@ -49,12 +49,12 @@ struct Scrollable: View {
                     
                     if newValue {
                         
-                        if !blockSpinn && !touch {
-                            print("touch: \(touch)")
-                            self.touch.toggle()
+                        if !blockSpinn /*&& !touch */{
+//                            print("touch: \(touch)")
+//                            self.touch.toggle()
                             animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch)
                             self.spinn1.toggle()
-                            print("touch: \(touch)")
+//                            print("touch: \(touch)")
                             
                         }
                     }
@@ -101,8 +101,8 @@ struct Scrollable: View {
                     timer.invalidate()
                     
                 })
-                self.touch.toggle()
-                print("touch: \(touch)")
+//                self.touch.toggle()
+//                print("touch: \(touch)")
                 
             }
         }

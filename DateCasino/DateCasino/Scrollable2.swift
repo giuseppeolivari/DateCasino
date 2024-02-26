@@ -49,12 +49,12 @@ struct Scrollable2: View {
                     
                     if newValue {
                         
-                        if !blockSpinn2 && !touch2{
+                        if !blockSpinn2 /*&& !touch2*/{
                             print("touch2: \(touch2)")
                             self.touch2.toggle()
                             animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch2)
                             self.spinn2.toggle()
-                            print("touch2: \(touch2)")
+//                            print("touch2: \(touch2)")
                             
                         }
                     }
@@ -100,8 +100,8 @@ struct Scrollable2: View {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
                     timer.invalidate()
-                    self.touch2.toggle()
-                    print("touch2: \(touch2)")
+//                    self.touch2.toggle()
+//                    print("touch2: \(touch2)")
                     //self.spinn1.toggle()
                 })
                 

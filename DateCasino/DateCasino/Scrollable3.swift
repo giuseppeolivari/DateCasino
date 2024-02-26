@@ -50,8 +50,8 @@ struct Scrollable3: View {
                     if newValue {
                         
                         if !blockSpinn3 {
-                            blockSpinn3.toggle()
-                            print("\(blockSpinn3)")
+//                            blockSpinn3.toggle()
+//                            print("\(blockSpinn3)")
                             animateWithTimer(proxy: scrollView, boh: self.boh,touch: self.touch3)
                             
                             self.spinn3.toggle()
@@ -104,8 +104,8 @@ struct Scrollable3: View {
                     //self.spinn1.toggle()
                 })
                 
-                blockSpinn3.toggle()
-                print("\(blockSpinn3)")
+//                blockSpinn3.toggle()
+//                print("\(blockSpinn3)")
                 
             }
         }
