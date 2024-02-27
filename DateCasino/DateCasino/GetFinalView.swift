@@ -20,19 +20,27 @@ struct GetFinalView: View {
         
         ZStack {
             if isPresented {
-                FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3).onAppear {
-                    Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
-                        withAnimation(.easeInOut(duration: 1)) {
-                            self.isPresented.toggle()
-                            spinn1 = false
-                            spinn2 = false
-                            spinn3 = false
+                withAnimation(.easeIn(duration: 1))
+                {
+                    FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3).onAppear {
+                        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+                            withAnimation(.easeInOut(duration: 1)) {
+                                self.isPresented.toggle()
+                                spinn1 = false
+                                spinn2 = false
+                                spinn3 = false
+                            }
+                            
                         }
-                        
-                    }
-                }//.transition(.scale)
+                    }//.transition(.scale)
+                }
             }
+            
             VStack {
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
                 Spacer()
                 Spacer()
                 Spacer()
@@ -44,27 +52,27 @@ struct GetFinalView: View {
                 Button(action: {
                     
                     finalView = true
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { finalView = false }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { finalView = false }
                     isPresented.toggle()
                 }, label: {
                     if !finalView {
                         Image("Buttonoff")
                             .resizable()
-                            .frame(width: 150, height: 75)
+                            .frame(width: 170, height: 50)
                     } else {
                         Image("pressedbutton")
                             .resizable()
-                            .frame(width: 150, height: 60)
+                            .frame(width: 170, height: 30)
                     }
                 })
-                
+                Spacer()
                 Spacer()
                 Spacer()
                 Spacer()
             }
         }
-
-
+        
+        
     }
 }
 
