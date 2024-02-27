@@ -20,6 +20,7 @@
 		069B92802B875DD500330CAA /* Scrollable2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B927F2B875DD500330CAA /* Scrollable2.swift */; };
 		069B92822B875DDF00330CAA /* Scrollable3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B92812B875DDF00330CAA /* Scrollable3.swift */; };
 		069B92862B88978400330CAA /* FinalAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B92852B88978400330CAA /* FinalAnimation.swift */; };
+		272692D72B8E3B29009EF611 /* GetFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272692D62B8E3B29009EF611 /* GetFinalView.swift */; };
 		27BBA7C92B88B6EB000F2EB8 /* AnimatedLeverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBA7C82B88B6EB000F2EB8 /* AnimatedLeverView.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		069B927F2B875DD500330CAA /* Scrollable2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable2.swift; sourceTree = "<group>"; };
 		069B92812B875DDF00330CAA /* Scrollable3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable3.swift; sourceTree = "<group>"; };
 		069B92852B88978400330CAA /* FinalAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalAnimation.swift; sourceTree = "<group>"; };
+		272692D62B8E3B29009EF611 /* GetFinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFinalView.swift; sourceTree = "<group>"; };
 		27BBA7C82B88B6EB000F2EB8 /* AnimatedLeverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLeverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				068EB2C52B83522900A9DA6D /* DateCasinoApp.swift */,
 				068EB2C72B83522900A9DA6D /* ContentView.swift */,
 				27BBA7C82B88B6EB000F2EB8 /* AnimatedLeverView.swift */,
+				272692D62B8E3B29009EF611 /* GetFinalView.swift */,
 				069B92852B88978400330CAA /* FinalAnimation.swift */,
 				069B92792B860BBF00330CAA /* Scrollable.swift */,
 				069B927F2B875DD500330CAA /* Scrollable2.swift */,
@@ -260,6 +263,7 @@
 			files = (
 				27BBA7C92B88B6EB000F2EB8 /* AnimatedLeverView.swift in Sources */,
 				069B92822B875DDF00330CAA /* Scrollable3.swift in Sources */,
+				272692D72B8E3B29009EF611 /* GetFinalView.swift in Sources */,
 				069B927A2B860BBF00330CAA /* Scrollable.swift in Sources */,
 				069B92802B875DD500330CAA /* Scrollable2.swift in Sources */,
 				068EB2C82B83522900A9DA6D /* ContentView.swift in Sources */,

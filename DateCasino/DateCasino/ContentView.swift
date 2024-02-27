@@ -17,13 +17,14 @@ struct ContentView: View {
     @State var finalText2 = "b"
     @State var finalText3 = "c"
     @State var isPresented : Bool = false
-    @State var finalView: Bool = false
+    
     
     //@State  var blockSpinn = false
     //@State  var blockSpinn2 = false
     // @State  var blockSpinn3 = false
     
     var body: some View {
+        
         ZStack{
             //            Image("background")
             //                .resizable()
@@ -59,30 +60,11 @@ struct ContentView: View {
                                 }
                                 
                             }
-                            VStack {
-                                Spacer()
-                                Spacer()
-                                Spacer()
-                                Spacer()
-                                Spacer()
-                                Spacer()
-                                Spacer()
-                                Spacer()
-                                Button(action: {
-                                    finalView.toggle()
-                                    isPresented.toggle()
-                                    //                        blockSpinn = true
-                                    //                        blockSpinn2 = true
-                                    //                        blockSpinn3 = true
-                                }, label: {
-                                    Image(finalView ? "Buttonoff" : "pressedbutton")
-                                        .resizable()
-                                        .frame(width: 150, height: 75)
-                                })
-                                .accessibilityRemoveTraits(.isButton)
-                                Spacer()
-                                Spacer()
-                                Spacer()
+                            Button(action: {
+                               
+                            }) {
+                                GetFinalView(isPresented: $isPresented)
+                                
                             }
                         }
                     }
