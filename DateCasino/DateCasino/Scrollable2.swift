@@ -44,7 +44,7 @@ struct Scrollable2: View {
                         ForEach(0..<1000000) { index in
                             
                             Text(attr1[arr1[index]])
-                                .font(.largeTitle)
+                                .font(.title)
                                 .id(index)
                                 .frame(width: 275, height: 80)
                             

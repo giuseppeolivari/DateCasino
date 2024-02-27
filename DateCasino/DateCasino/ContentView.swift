@@ -21,9 +21,7 @@ struct ContentView: View {
     //@State  var blockSpinn = false
     //@State  var blockSpinn2 = false
     // @State  var blockSpinn3 = false
-    
-    
-    
+  
     var body: some View {
         ZStack{
             //            Image("background")
@@ -37,8 +35,12 @@ struct ContentView: View {
                             VStack {
                                 Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
                                 Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
+                                    .padding(.top)
                                 Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
+                                    .padding(.top)
                             }
+                            .frame(width: 250, height: 350, alignment: .top)
+                            
                         }
                         ZStack {
                             Image("background")
@@ -107,7 +109,7 @@ struct ContentView: View {
                         
                     }
                 }//.transition(.scale)
-            }      
+            }
         }
         
     }
