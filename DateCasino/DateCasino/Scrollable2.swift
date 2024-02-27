@@ -74,7 +74,7 @@ struct Scrollable2: View {
         let count: Int = 10
         let duration: Double = 1.0
         let timeInterval: Double = (duration / Double(count))
-        var counter = self.boh
+        var counter = boh
         var check = 0
         //        print("\(counter)")
         var random = Int.random(in:(counter + 50)...(counter+100))
