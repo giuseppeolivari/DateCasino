@@ -28,21 +28,30 @@ struct ContentView: View {
         ZStack{
             Image("background")
                 .resizable()
+                .scaledToFill()
                 .ignoresSafeArea()
             VStack{
                 HStack{
-                    Spacer()
-                    VStack {
-                        Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
-                            .padding()
-                        Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
-                            .padding()
-                        Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
-                            .padding()
-                    }
-                        Spacer()
+                    
+                    Group {
                         VStack {
-                            Spacer()
+                            Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
+                                .padding()
+                            Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
+                                .padding()
+                            Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
+                                .padding()
+                        }
+                        .padding(.horizontal)
+                        .padding(.horizontal)
+                        .padding(.horizontal)
+                        .padding(.horizontal)
+                        .padding(.horizontal)
+                        .padding(.horizontal)
+                    }
+                        
+                        VStack {
+                            
                             Button(action: {
         //                        toggleSpins()
         //                        print("\(spinn1)")
@@ -54,12 +63,12 @@ struct ContentView: View {
                                 
                               
                             }
-                            Spacer()
+                            
                         }
                 
-                    //Text(finalText0)
+                    
                 }
-                .padding()
+//                .padding()
                 
                 
                 
