@@ -30,23 +30,25 @@ struct ContentView: View {
                 .resizable()
                 .ignoresSafeArea()
             VStack{
-                HStack {
-                    Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
-                    Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
-                    Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
-                    
-                    
-                    Button(action: {
-//                        toggleSpins()
-//                        print("\(spinn1)")
-                    }) {  
-                     
-                            
-                            
-                            AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, action: toggleSpins)
-                        
-                      
+                HStack{
+                    VStack {
+                        Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
+                        Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
+                        Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
                     }
+                        
+                        Button(action: {
+    //                        toggleSpins()
+    //                        print("\(spinn1)")
+                        }) {
+                         
+                                
+                                
+                                AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, action: toggleSpins)
+                            
+                          
+                        }
+                
                     //Text(finalText0)
                 }
                 .padding()

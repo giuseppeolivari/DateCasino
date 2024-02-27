@@ -33,16 +33,15 @@ struct Scrollable3: View {
                         ForEach(0..<1000000) { index in
                             
                             Text(attr1[arr1[index]])
-                                .font(.title2)
-                                .id(index)
-                            
+                                .font(.largeTitle)                                .id(index)
+                                .frame(height: 70)
                             
                         }
                     }
                 }
                 .foregroundColor(.green)
                 .scrollDisabled(true)
-                .frame(height: 130)
+                .frame(width: 100, height: 70)
                 
                 
                 .onChange(of: spinn3) { newValue in
