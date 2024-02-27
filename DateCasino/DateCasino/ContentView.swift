@@ -51,10 +51,7 @@ struct ContentView: View {
                             HStack {
                                 Spacer()
                                 
-                                Button(action: {
-                                    //                        toggleSpins()
-                                    //                        print("\(spinn1)")
-                                }) {
+                                Button(action: { }) {
                                     AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, action: toggleSpins)
                                     
                                 }
@@ -69,20 +66,6 @@ struct ContentView: View {
                         }
                     }
                 }
-            }
-            
-            if isPresented {
-                FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3).onAppear {
-                    Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
-                        withAnimation(.easeInOut(duration: 1)) {
-                            self.isPresented.toggle()
-                            spinn1 = false
-                            spinn2 = false
-                            spinn3 = false
-                        }
-                        
-                    }
-                }//.transition(.scale)
             }
         }
         
