@@ -17,16 +17,17 @@ struct ContentView: View {
     @State var finalText2 = "b"
     @State var finalText3 = "c"
     @State var isPresented : Bool = false
+    @State var finalView: Bool = false
     
     //@State  var blockSpinn = false
     //@State  var blockSpinn2 = false
     // @State  var blockSpinn3 = false
-  
+    
     var body: some View {
         ZStack{
             //            Image("background")
             //                .resizable()
-            //                
+            //
             //                .ignoresSafeArea()
             VStack{
                 HStack{
@@ -68,24 +69,15 @@ struct ContentView: View {
                                 Spacer()
                                 Spacer()
                                 Button(action: {
-                                    withAnimation {
-                                        isPresented.toggle()
-                                        
-                                        //                        blockSpinn = true
-                                        //                        blockSpinn2 = true
-                                        //                        blockSpinn3 = true
-                                    }
-                                    
+                                    finalView.toggle()
+                                    isPresented.toggle()
+                                    //                        blockSpinn = true
+                                    //                        blockSpinn2 = true
+                                    //                        blockSpinn3 = true
                                 }, label: {
-                                    VStack {
-                                        
-                                        Image("Buttonoff")
-                                            .resizable()
-                                            .frame(width: 200, height: 75)
-                                        
-                                    }
-                                    
-                                    .accessibilityLabel("tap to get")
+                                    Image(finalView ? "Buttonoff" : "pressedbutton")
+                                        .resizable()
+                                        .frame(width: 150, height: 75)
                                 })
                                 .accessibilityRemoveTraits(.isButton)
                                 Spacer()
