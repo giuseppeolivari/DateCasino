@@ -49,11 +49,11 @@ struct Scrollable2: View {
                 .onChange(of: spinn2) { newValue in
                     
                     if newValue {
-                        if !animationIsOn{
-                            animationIsOn.toggle()
-                            print("animationIsOn2 start: \(animationIsOn)")
+                        if spinn2{
+                            
+//                            print("animationIsOn2 start: \(animationIsOn)")
                             animateWithTimer(proxy: scrollView, boh: boh)
-                            spinn2.toggle()
+                            
                         }
                     }
                 }
@@ -74,14 +74,13 @@ struct Scrollable2: View {
         let count: Int = 10
         let duration: Double = 1.0
         let timeInterval: Double = (duration / Double(count))
-        var counter = boh
-        
+        var counter = self.boh
+        var check = 0
         //        print("\(counter)")
-        let random = Int.random(in:(counter + 50)...(counter+100))
+        var random = Int.random(in:(counter + 50)...(counter+100))
         //        let random = Int.random(in: 0...50)
         let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
             withAnimation(.default) {
-                
                 proxy.scrollTo(counter, anchor: .center)
                 
                 //print("fin:\(fin)")
@@ -93,17 +92,20 @@ struct Scrollable2: View {
             }
             if counter < random {
                 counter+=1
-                
+                check+=1
             }else{
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
-                    timer.invalidate()
-                    if self.animationIsOn == true{
-                        self.animationIsOn.toggle()
-                        print("animationIsOn2: \(self.animationIsOn)")
-                        
-                    }
-                })
-                
+                if check == 0{
+                    random = Int.random(in:(counter + 50)...(counter+100))
+                }else{
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+                        timer.invalidate()
+                        if self.spinn2 == true{
+                            self.spinn2.toggle()
+                            print("2: random is \(random) and counter is \(counter) and check is \(check)")
+                            
+                        }
+                    })
+                }
             }
         }
         timer.fire()

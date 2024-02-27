@@ -20,6 +20,7 @@ struct AnimatedLeverView: View {
                 animationIsOn.toggle()
                 startAnimation()
                 action()
+                print("here does the animation")
             }else{
                 
             }
