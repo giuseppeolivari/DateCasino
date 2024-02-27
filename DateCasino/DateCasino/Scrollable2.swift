@@ -16,7 +16,18 @@ struct Scrollable2: View {
     //@Binding  var blockSpinn2 : Bool
     @Binding var spinn2 : Bool
     
-    var attr1 : [String] = ["first", "second", "third","fourth","fifth","sixth"]
+    var attr1 : [String] = ["Cinema",
+                            "Ice skating",
+                            "Theater",
+                            "Paintball",
+                            "Amusement park",
+                            "Board game",
+                            "Karaoke",
+                            "Trekking",
+                            "Bowling",
+                            "Baking",
+                            "Laser tag",
+                            "Escape room"]
     
     let arr1 = (0..<1000000).map( {_ in Int.random(in: 0...5)} )
     
