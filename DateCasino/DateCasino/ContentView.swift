@@ -95,6 +95,7 @@ struct ContentView: View {
                             spinn2 = false
                             spinn3 = false
                         }
+                        
                     }
                 }//.transition(.scale)
             }
