@@ -99,7 +99,7 @@ struct Scrollable: View {
                 if check == 0{
                     random = Int.random(in:(counter + 50)...(counter+100))
                 }else{
-                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
                         timer.invalidate()
                         if self.spinn1 == true{
                             self.spinn1.toggle()
@@ -107,7 +107,7 @@ struct Scrollable: View {
                             check = 0
                             random = Int.random(in:(counter + 50)...(counter+100))
                         }
-                    })
+//                    })
                 }
                 
             }
