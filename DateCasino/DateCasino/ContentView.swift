@@ -28,43 +28,45 @@ struct ContentView: View {
         ZStack{
             Image("background")
                 .resizable()
-                .scaledToFill()
+                
                 .ignoresSafeArea()
             VStack{
                 HStack{
                     
-                    Group {
-                        VStack {
-                            Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
-                                .padding()
-                            Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
-                                .padding()
-                            Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
-                                .padding()
-                        }
-                        .padding(.horizontal)
-                        .padding(.horizontal)
-                        .padding(.horizontal)
-                        .padding(.horizontal)
-                        .padding(.horizontal)
-                        .padding(.horizontal)
-                    }
-                        
-                        VStack {
-                            
-                            Button(action: {
-        //                        toggleSpins()
-        //                        print("\(spinn1)")
-                            }) {
-                             
-                                    
-                                    
-                                    AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, action: toggleSpins)
-                                
-                              
+                    ZStack {
+                        Group {
+                            VStack {
+                                Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
+                                    //.padding()
+                                Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
+                                    //.padding()
+                                Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
+                                    //.padding()
                             }
                             
                         }
+                            
+                            
+                                HStack{
+                                    Spacer()
+                                    ZStack{
+
+                                        Button(action: {
+                    //                        toggleSpins()
+                    //                        print("\(spinn1)")
+                                        }) {
+                                         
+                                                
+                                                
+                                                AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, action: toggleSpins)
+                                            
+                                          
+                                        }
+                                    }
+                                }
+                    }
+                            
+                        
                 
                     
                 }

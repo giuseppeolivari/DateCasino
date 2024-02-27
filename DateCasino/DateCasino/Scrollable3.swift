@@ -34,14 +34,14 @@ struct Scrollable3: View {
                             
                             Text(attr1[arr1[index]])
                                 .font(.largeTitle)                                .id(index)
-                                .frame(width: 100, height: 70)
+                                .frame(width: 275, height: 80)
                             
                         }
                     }
                 }
-                .foregroundColor(.green)
+                .foregroundColor(.black)
                 .scrollDisabled(true)
-                .frame(width: 100, height: 70)
+                .frame(width: 275, height: 80)
                 
                 
                 .onChange(of: spinn3) { newValue in
