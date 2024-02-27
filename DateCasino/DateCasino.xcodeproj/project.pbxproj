@@ -410,7 +410,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DateCasino Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = ANK9G9SNJV;
+				DEVELOPMENT_TEAM = XQMJRDV4LZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DateCasino-Watch-App-Info.plist";
@@ -421,7 +421,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.giuseppeolivari.prova.DateCasino.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -441,7 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DateCasino Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = ANK9G9SNJV;
+				DEVELOPMENT_TEAM = XQMJRDV4LZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DateCasino-Watch-App-Info.plist";
@@ -452,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.giuseppeolivari.prova.DateCasino.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -472,9 +472,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"DateCasino/Preview Content\"";
-				DEVELOPMENT_TEAM = ANK9G9SNJV;
+				DEVELOPMENT_TEAM = XQMJRDV4LZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DateCasino/Info.plist;
@@ -506,9 +506,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"DateCasino/Preview Content\"";
-				DEVELOPMENT_TEAM = ANK9G9SNJV;
+				DEVELOPMENT_TEAM = XQMJRDV4LZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DateCasino/Info.plist;
