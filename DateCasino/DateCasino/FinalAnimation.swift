@@ -10,17 +10,22 @@ import SwiftUI
 struct FinalAnimation: View {
     
     @Binding  var isPresented : Bool
-    @State var finalText0: String
-    @State var finalText2: String
-    @State var finalText3: String
+    @Binding var finalText0: String
+    @Binding var finalText2: String
+    @Binding var finalText3: String
     
     var body: some View {
         VStack{
-            
+            Spacer()
             Image("WIN ANIMATION")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            Text("\(finalText0) \(finalText2) \(finalText3)").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Spacer()
+            HStack {
+                Text("\(finalText0)").font(.title).background(Color.red)
+                Text("\(finalText2)").font(.title).background(Color.red)
+                Text("\(finalText3)").font(.title).background(Color.red)
+            }
             
             
             
@@ -30,5 +35,5 @@ struct FinalAnimation: View {
 }
 
 #Preview {
-    FinalAnimation(isPresented: .constant(false), finalText0: "a", finalText2: "b", finalText3: "c")
+    FinalAnimation(isPresented: .constant(false), finalText0: .constant("not get"), finalText2: .constant("not get"), finalText3: .constant("not get"))
 }

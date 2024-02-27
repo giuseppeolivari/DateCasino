@@ -60,7 +60,7 @@ struct ContentView: View {
                             Button(action: {
                                
                             }) {
-                                GetFinalView(isPresented: $isPresented)
+                                GetFinalView(isPresented: $isPresented, finalText0: $finalText0, finalText2: $finalText2, finalText3: $finalText3)
                                 
                             }
                         }
