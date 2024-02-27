@@ -20,90 +20,80 @@ struct ContentView: View {
     
     //@State  var blockSpinn = false
     //@State  var blockSpinn2 = false
-   // @State  var blockSpinn3 = false
+    // @State  var blockSpinn3 = false
     
     
     
     var body: some View {
         ZStack{
-            Image("background")
-                .resizable()
-                
-                .ignoresSafeArea()
+            //            Image("background")
+            //                .resizable()
+            //                
+            //                .ignoresSafeArea()
             VStack{
                 HStack{
-                    
                     ZStack {
                         Group {
                             VStack {
                                 Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
-                                    //.padding()
                                 Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
-                                    //.padding()
                                 Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
-                                    //.padding()
                             }
-                            
                         }
-                            
-                            
-                                HStack{
-                                    Spacer()
-                                    ZStack{
-
-                                        Button(action: {
-                    //                        toggleSpins()
-                    //                        print("\(spinn1)")
-                                        }) {
-                                         
-                                                
-                                                
-                                                AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, action: toggleSpins)
-                                            
-                                          
-                                        }
-                                    }
+                        ZStack {
+                            Image("background")
+                                .resizable()
+                                .ignoresSafeArea()
+                            HStack {
+                                Spacer()
+                                
+                                Button(action: {
+                                    //                        toggleSpins()
+                                    //                        print("\(spinn1)")
+                                }) {
+                                    AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, action: toggleSpins)
+                                    
                                 }
+                                
+                            }
+                            VStack {
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                Button(action: {
+                                    withAnimation {
+                                        isPresented.toggle()
+                                        
+                                        //                        blockSpinn = true
+                                        //                        blockSpinn2 = true
+                                        //                        blockSpinn3 = true
+                                    }
+                                    
+                                }, label: {
+                                    VStack {
+                                        
+                                        Image("Buttonoff")
+                                            .resizable()
+                                            .frame(width: 200, height: 75)
+                                        
+                                    }
+                                    
+                                    .accessibilityLabel("tap to get")
+                                })
+                                .accessibilityRemoveTraits(.isButton)
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                            }
+                        }
                     }
-                            
-                        
-                
-                    
                 }
-//                .padding()
-                
-                
-                
-                Button(action: {
-                    withAnimation {
-                        isPresented.toggle()
-                        
-//                        blockSpinn = true
-//                        blockSpinn2 = true
-//                        blockSpinn3 = true
-                    }
-                    
-                }, label: {
-                    VStack {
-                        
-                        Text("get")
-                    }
-                    
-                    .accessibilityLabel("tap to get")
-                })
-                .accessibilityRemoveTraits(.isButton)
-                
-                
-                /*
-                 COSì APPARE COME MODALE
-                 .fullScreenCover(isPresented: $isPresented) {
-                 FinalAnimation(isPresented: $isPresented)
-                 
-                 }
-                 */
             }
-            
-            // COSì APPARE SULLA VIEW
             
             if isPresented {
                 FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3).onAppear {
@@ -117,13 +107,7 @@ struct ContentView: View {
                         
                     }
                 }//.transition(.scale)
-            }
-            
-            
-            
-            
-            
-            
+            }      
         }
         
     }
