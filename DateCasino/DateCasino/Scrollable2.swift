@@ -102,7 +102,7 @@ struct Scrollable2: View {
                         if self.spinn2 == true{
                             self.spinn2.toggle()
                             print("2: random is \(random) and counter is \(counter) and check is \(check)")
-                            
+                            check = 0
                         }
                     })
                 }
