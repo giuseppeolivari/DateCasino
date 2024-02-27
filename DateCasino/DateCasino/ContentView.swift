@@ -31,22 +31,30 @@ struct ContentView: View {
                 .ignoresSafeArea()
             VStack{
                 HStack{
+                    Spacer()
                     VStack {
                         Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
+                            .padding()
                         Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
+                            .padding()
                         Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
+                            .padding()
                     }
-                        
-                        Button(action: {
-    //                        toggleSpins()
-    //                        print("\(spinn1)")
-                        }) {
-                         
+                        Spacer()
+                        VStack {
+                            Spacer()
+                            Button(action: {
+        //                        toggleSpins()
+        //                        print("\(spinn1)")
+                            }) {
+                             
+                                    
+                                    
+                                    AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, action: toggleSpins)
                                 
-                                
-                                AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, action: toggleSpins)
-                            
-                          
+                              
+                            }
+                            Spacer()
                         }
                 
                     //Text(finalText0)

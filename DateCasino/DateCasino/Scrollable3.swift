@@ -34,7 +34,7 @@ struct Scrollable3: View {
                             
                             Text(attr1[arr1[index]])
                                 .font(.largeTitle)                                .id(index)
-                                .frame(height: 70)
+                                .frame(width: 100, height: 70)
                             
                         }
                     }
@@ -78,7 +78,7 @@ struct Scrollable3: View {
         var random = Int.random(in:(counter + 50)...(counter+100))
         //        let random = Int.random(in: 0...50)
         let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
-            withAnimation(.default) {
+            withAnimation(.spring) {
                 proxy.scrollTo(counter, anchor: .center)
                 //print("fin:\(fin)")
                 finalText3 = attr1[arr1[counter]]
