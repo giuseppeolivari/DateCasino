@@ -43,12 +43,17 @@ struct Scrollable2: View {
                     LazyVStack(){
                         ForEach(0..<1000000) { index in
                             
-                            Text(attr1[arr1[index]])
-                                .font(.title)
-                                .id(index)
-                                .frame(width: 275, height: 80)
-                            
-                            
+                            if index == 0{
+                                Text("Spin!")
+                                    .font(.title)                                .id(index)
+                                    .frame(width: 275, height: 80)
+                            }else{
+                                Text(attr1[arr1[index]])
+                                    .font(.title)
+                                    .id(index)
+                                    .frame(width: 275, height: 80)
+                                
+                            }
                         }
                     }
                 }
