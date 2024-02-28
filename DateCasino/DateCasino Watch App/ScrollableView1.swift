@@ -8,129 +8,170 @@
 import SwiftUI
 import WatchKit
 
+
+
 struct ScrollableView1: View {
     @State private var test = false
     @State private var scrollAmount = 0.0
     @State private var finalText1 = "Not get"
     @State private var scrollText = false
     @State private var boh = 0
-    var attr : [String] = ["first", "second", "third","fourth","fifth","sixth"]
+    var attr1 : [String] = ["Hamburger", "Sushi", "Noodles", "Pizza", "Lasagna", "Steak", "Roasted chicken", "Ice cream", "Kebab", "Pita", "Paella", "Tacos"]
+    var attr2 : [String] = ["Cinema",
+                            "Skating",
+                            "Theater",
+                            "Paintball",
+                            "Amusement park",
+                            "Board game",
+                            "Karaoke",
+                            "Trekking",
+                            "Bowling",
+                            "Baking",
+                            "Laser tag",
+                            "Escape room"]
+    var attr3 : [String] = ["Streaptease", "Lap dance", "Massage", "Couple shower", "Handcuff", "Role play"]
     let arr = (0..<1000).map( {_ in Int.random(in: 0...5)} )
     var body: some View {
        
-        VStack{
-            ScrollViewReader { scrollView in
-                ScrollView(showsIndicators: false){
-                    LazyVStack(){
-                        ForEach(0..<1000) { index in
-                            
-                            Text(attr[arr[index]])
-                                .font(.title2)
-                                .id(index)
-                            
-                            
+        
+           
+                
+            GeometryReader { geometry in
+                
+                ZStack{
+                   
+                    Image("BackgroundWatch")
+                        .resizable()
+                        .ignoresSafeArea()
+                        .frame(width:185,height: 210)
+                        .position(x: geometry.size.width / 2, y: geometry.size.height / 2 )
+                        .background(.gray)
+                 
+                    
+                    
+                    ScrollViewReader { scrollView in
+                        ScrollView(showsIndicators: false){
+                            LazyVStack(){
+                                ForEach(0..<1000) { index in
+                                    
+                                    Text(attr1[arr[index]])
+                                        
+                                        .id(index)
+                                        .foregroundColor(.black)
+                                                                     
+                                    
+                                    
+                                }
+                            }
                         }
-                    }
-                }
-                .foregroundColor(.green)
-                .scrollDisabled(true)
-                .frame(height: 35)
-                .focusable(true)
-                .digitalCrownRotation($scrollAmount, from: -1, through: 0, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
-                .scrollIndicators(.hidden)
-            
-                .onChange(of: scrollAmount){
-                    if(scrollAmount == -1){
-                        animateWithTimer(proxy: scrollView, boh: self.boh)
+                        .foregroundColor(.green)
+                        .scrollDisabled(true)
+                        .frame(height: 20)
+                        .focusable(true)
+                        .digitalCrownRotation($scrollAmount, from: -1, through: 0, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
+                        .scrollIndicators(.hidden)
+                    
+                        .onChange(of: scrollAmount){
+                            if(scrollAmount == -1){
+                                animateWithTimer(proxy: scrollView, boh: self.boh)
+                                
+                            }
+                        } .position(x: geometry.size.width / 2, y: geometry.size.height / 11)
+                        
+        //                .onChange(of: test){
+        //                    newValue in
+        //
+        //                        animateWithTimer(proxy: scrollView, boh: self.boh)
+        //
+        //                }
+                        
                         
                     }
-                }
-                
-//                .onChange(of: test){
-//                    newValue in
-//
-//                        animateWithTimer(proxy: scrollView, boh: self.boh)
-//
-//                }
-                
-                
-            }
-            ScrollViewReader { scrollView in
-                ScrollView(showsIndicators: false){
-                    LazyVStack(){
-                        ForEach(0..<1000) { index in
-                            
-                            Text(attr[arr[index]])
-                                .font(.title2)
-                                .id(index)
-                            
-                            
+                    ScrollViewReader { scrollView in
+                        ScrollView(showsIndicators: false){
+                            LazyVStack(){
+                                ForEach(0..<1000) { index in
+                                    
+                                    Text(attr2[arr[index]])
+                                       
+                                        .id(index)
+                                        .foregroundColor(.black)
+                                                                     
+                                    
+                                    
+                                }
+                            }
                         }
-                    }
-                }
-                .foregroundColor(.green)
-                .scrollDisabled(true)
-                .frame(height: 35)
-                .focusable(true)
-                .digitalCrownRotation($scrollAmount, from: -1, through: 0, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
-                .scrollIndicators(.hidden)
-            
-                .onChange(of: scrollAmount){
-                    if(scrollAmount == -1){
-                        animateWithTimer(proxy: scrollView, boh: self.boh)
+                        .foregroundColor(.green)
+                        .scrollDisabled(true)
+                        .frame(height: 20)
+                        .focusable(true)
+                        .digitalCrownRotation($scrollAmount, from: -1, through: 0, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
+                        .scrollIndicators(.hidden)
+                    
+                        .onChange(of: scrollAmount){
+                            if(scrollAmount == -1){
+                                animateWithTimer(proxy: scrollView, boh: self.boh)
+                                
+                            }
+                        }
+                        
+        //                .onChange(of: test){
+        //                    newValue in
+        //
+        //                        animateWithTimer(proxy: scrollView, boh: self.boh)
+        //
+        //                }
+                        
                         
                     }
-                }
-                
-//                .onChange(of: test){
-//                    newValue in
-//
-//                        animateWithTimer(proxy: scrollView, boh: self.boh)
-//
-//                }
-                
-                
-            }
-            
-            ScrollViewReader { scrollView in
-                ScrollView(showsIndicators: false){
-                    LazyVStack(){
-                        ForEach(0..<1000) { index in
-                            
-                            Text(attr[arr[index]])
-                                .font(.title2)
-                                .id(index)
-                            
-                            
+                    .position(x: geometry.size.width / 2, y: geometry.size.height / 2.2)
+                    
+                    ScrollViewReader { scrollView in
+                        ScrollView(showsIndicators: false){
+                            LazyVStack(){
+                                ForEach(0..<1000) { index in
+                                    
+                                    Text(attr3[arr[index]])
+        
+                                        .id(index)
+                                        .foregroundColor(.black)
+                                                                            
+                                    
+                                }
+                            }
                         }
-                    }
-                }
-                .foregroundColor(.green)
-                .scrollDisabled(true)
-                .frame(height: 35)
-                .focusable(true)
-                .digitalCrownRotation($scrollAmount, from: -1, through: 0, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
-                .scrollIndicators(.hidden)
-            
-                .onChange(of: scrollAmount){
-                    if(scrollAmount == -1){
-                        animateWithTimer(proxy: scrollView, boh: self.boh)
+                        .foregroundColor(.green)
+                        .scrollDisabled(true)
+                        .frame(height: 20)
+                        .focusable(true)
+                        .digitalCrownRotation($scrollAmount, from: -1, through: 0, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
+                        .scrollIndicators(.hidden)
+                    
+                        .onChange(of: scrollAmount){
+                            if(scrollAmount == -1){
+                                animateWithTimer(proxy: scrollView, boh: self.boh)
+                                
+                            }
+                        }
                         
-                    }
+        //                .onChange(of: test){
+        //                    newValue in
+        //
+        //                        animateWithTimer(proxy: scrollView, boh: self.boh)
+        //
+        //                }
+                        
+                        
+                    } .position(x: geometry.size.width / 2, y: geometry.size.height / 1.18)
+                    
+                    
+                 
+                    
                 }
-                
-//                .onChange(of: test){
-//                    newValue in
-//
-//                        animateWithTimer(proxy: scrollView, boh: self.boh)
-//
-//                }
-                
                 
             }
-       
-            
-        }.foregroundStyle(.green)
+        
 //                   .font(.custom("LasVegas-Jackpot", size: 30))
             
            
@@ -151,7 +192,7 @@ struct ScrollableView1: View {
                 proxy.scrollTo(counter, anchor: .center)
                 
                 //print("fin:\(fin)")
-                finalText1 = attr[arr[counter]]
+                
                 self.boh = counter
                 
                 
