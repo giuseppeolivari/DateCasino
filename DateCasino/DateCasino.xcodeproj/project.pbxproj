@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0661014B2B8F42F100BCCA4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0661014D2B8F42F100BCCA4A /* Localizable.strings */; };
 		068EB2C62B83522900A9DA6D /* DateCasinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2C52B83522900A9DA6D /* DateCasinoApp.swift */; };
 		068EB2C82B83522900A9DA6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EB2C72B83522900A9DA6D /* ContentView.swift */; };
 		068EB2CA2B83522A00A9DA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068EB2C92B83522A00A9DA6D /* Assets.xcassets */; };
@@ -49,6 +50,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0661014C2B8F42F100BCCA4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0661014E2B8F42F600BCCA4A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0661014F2B8F42F700BCCA4A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		068EB2C22B83522900A9DA6D /* DateCasino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DateCasino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068EB2C52B83522900A9DA6D /* DateCasinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCasinoApp.swift; sourceTree = "<group>"; };
 		068EB2C72B83522900A9DA6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		068EB2B92B83522900A9DA6D = {
 			isa = PBXGroup;
 			children = (
+				0661014D2B8F42F100BCCA4A /* Localizable.strings */,
 				068EB2EF2B835AEC00A9DA6D /* Font */,
 				068EB2C42B83522900A9DA6D /* DateCasino */,
 				068EB2D62B83522A00A9DA6D /* DateCasino Watch App */,
@@ -223,6 +228,8 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
+				es,
 			);
 			mainGroup = 068EB2B92B83522900A9DA6D;
 			productRefGroup = 068EB2C32B83522900A9DA6D /* Products */;
@@ -241,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				068EB2CD2B83522A00A9DA6D /* Preview Assets.xcassets in Resources */,
+				0661014B2B8F42F100BCCA4A /* Localizable.strings in Resources */,
 				068EB2CA2B83522A00A9DA6D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +298,19 @@
 			targetProxy = 068EB2D42B83522A00A9DA6D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0661014D2B8F42F100BCCA4A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0661014C2B8F42F100BCCA4A /* en */,
+				0661014E2B8F42F600BCCA4A /* it */,
+				0661014F2B8F42F700BCCA4A /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		068EB2E02B83522B00A9DA6D /* Debug */ = {
