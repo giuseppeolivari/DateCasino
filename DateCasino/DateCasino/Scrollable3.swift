@@ -79,7 +79,7 @@ struct Scrollable3: View {
         var check = 0
         
         //        print("\(counter)")
-        var random = Int.random(in:(counter + 50)...(counter+100))
+        var random = Int.random(in:(counter + 30)...(counter+70))
         //        let random = Int.random(in: 0...50)
         let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
             withAnimation(.spring) {
@@ -96,7 +96,7 @@ struct Scrollable3: View {
                 check+=1
             }else{
                 if check == 0{
-                    random = Int.random(in:(counter + 50)...(counter+100))
+                    random = Int.random(in:(counter + 30)...(counter+70))
                 }else{
                     
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
