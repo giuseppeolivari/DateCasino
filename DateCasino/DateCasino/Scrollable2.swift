@@ -17,7 +17,7 @@ struct Scrollable2: View {
     @Binding var spinn2 : Bool
     
     var attr1 : [String] = ["Cinema",
-                            "Ice skating",
+                            "Skating",
                             "Theater",
                             "Paintball",
                             "Amusement park",
