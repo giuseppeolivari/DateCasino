@@ -41,7 +41,6 @@ struct Scrollable: View {
                         }
                     }
                 }
-                .foregroundColor(.black)
                 .scrollDisabled(true)
                 .frame(width: 275, height: 80)
                 
