@@ -16,6 +16,7 @@ struct ScrollableView1: View {
     @State private var finalText1 = "Not get"
     @State private var scrollText = false
     @State private var boh = 0
+    @State private var cAnimation = 0
     var attr1 : [String] = ["Hamburger", "Sushi", "Noodles", "Pizza", "Lasagna", "Steak", "Roasted chicken", "Ice cream", "Kebab", "Pita", "Paella", "Tacos"]
     var attr2 : [String] = ["Cinema",
                             "Skating",
@@ -39,6 +40,7 @@ struct ScrollableView1: View {
             GeometryReader { geometry in
                 
                 ZStack{
+                  
                    
                     Image("BackgroundWatch")
                         .resizable()
@@ -113,6 +115,8 @@ struct ScrollableView1: View {
                             if(scrollAmount == -1){
                                 animateWithTimer(proxy: scrollView, boh: self.boh)
                                 
+                                
+                                
                             }
                         }
                         
@@ -169,14 +173,39 @@ struct ScrollableView1: View {
                  
                     
                 }
+                if(self.cAnimation == 3){
+                    
+                    
+                    withAnimation()
+                    {
+                        
+                        FinalAnimationWatchApp().onAppear {
+                            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+                                withAnimation(.easeInOut(duration: 1)) {
+                                    self.cAnimation = 0
+                                }
+                                
+                            }
+                        }.ignoresSafeArea()
+                    }
+                    
+                }
+                
+                    
+                   
+                    
+               
+                
                 
             }
+        
         
 //                   .font(.custom("LasVegas-Jackpot", size: 30))
             
            
             
     }
+   
     func animateWithTimer(proxy: ScrollViewProxy, boh: Int ) {
         let count: Int = 10
         let duration: Double = 1.0
@@ -204,6 +233,10 @@ struct ScrollableView1: View {
             }else{
                 
                 timer.invalidate()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                    self.cAnimation += 1
+                                })
                 
             }
         }

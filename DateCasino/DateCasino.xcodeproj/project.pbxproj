@@ -23,6 +23,7 @@
 		069B92862B88978400330CAA /* FinalAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B92852B88978400330CAA /* FinalAnimation.swift */; };
 		272692D72B8E3B29009EF611 /* GetFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272692D62B8E3B29009EF611 /* GetFinalView.swift */; };
 		27BBA7C92B88B6EB000F2EB8 /* AnimatedLeverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBA7C82B88B6EB000F2EB8 /* AnimatedLeverView.swift */; };
+		DAEB1E192B8F5C70005F6B21 /* FinalAnimationWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB1E182B8F5C70005F6B21 /* FinalAnimationWatchApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		069B92852B88978400330CAA /* FinalAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalAnimation.swift; sourceTree = "<group>"; };
 		272692D62B8E3B29009EF611 /* GetFinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFinalView.swift; sourceTree = "<group>"; };
 		27BBA7C82B88B6EB000F2EB8 /* AnimatedLeverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLeverView.swift; sourceTree = "<group>"; };
+		DAEB1E182B8F5C70005F6B21 /* FinalAnimationWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalAnimationWatchApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				068EB2F72B835D4600A9DA6D /* DateCasino-Watch-App-Info.plist */,
 				068EB2D72B83522A00A9DA6D /* DateCasinoApp.swift */,
 				068EB2E92B8352A800A9DA6D /* ScrollableView1.swift */,
+				DAEB1E182B8F5C70005F6B21 /* FinalAnimationWatchApp.swift */,
 				068EB2DB2B83522B00A9DA6D /* Assets.xcassets */,
 				068EB2DD2B83522B00A9DA6D /* Preview Content */,
 			);
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				068EB2EA2B8352A800A9DA6D /* ScrollableView1.swift in Sources */,
+				DAEB1E192B8F5C70005F6B21 /* FinalAnimationWatchApp.swift in Sources */,
 				068EB2D82B83522A00A9DA6D /* DateCasinoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
