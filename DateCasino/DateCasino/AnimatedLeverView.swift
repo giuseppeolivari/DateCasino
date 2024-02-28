@@ -29,7 +29,7 @@ struct AnimatedLeverView: View {
                 .resizable()
                 .ignoresSafeArea()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 210, alignment: .trailing)
+                .frame(width: 80, height: 210, alignment: .trailing)
         }
         
     }

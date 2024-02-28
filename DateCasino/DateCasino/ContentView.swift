@@ -37,7 +37,7 @@ struct ContentView: View {
                     Spacer()
                     Button(action: { }) {
                         AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, action: toggleSpins)
-                    }
+                    }.padding(.trailing, 7.0)
                 }
                 Button(action: { }) {
                     GetFinalView(isPresented: $isPresented, finalText0: $finalText0, finalText2: $finalText2, finalText3: $finalText3)
