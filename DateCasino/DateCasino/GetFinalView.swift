@@ -22,7 +22,7 @@ struct GetFinalView: View {
             if isPresented {
                 withAnimation(.easeIn(duration: 1))
                 {
-                    FinalAnimation(isPresented: $isPresented, finalText0: $finalText0, finalText2: $finalText2, finalText3: $finalText3).onAppear {
+                    FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3).onAppear {
                         Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
                             withAnimation(.easeInOut(duration: 1)) {
                                 self.isPresented.toggle()

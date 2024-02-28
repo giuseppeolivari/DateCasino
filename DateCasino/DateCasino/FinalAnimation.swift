@@ -10,9 +10,9 @@ import SwiftUI
 struct FinalAnimation: View {
     
     @Binding  var isPresented : Bool
-    @Binding var finalText0: String
-    @Binding var finalText2: String
-    @Binding var finalText3: String
+    var finalText0: String
+    var finalText2: String
+    var finalText3: String
     
     var body: some View {
         VStack{
@@ -35,5 +35,5 @@ struct FinalAnimation: View {
 }
 
 #Preview {
-    FinalAnimation(isPresented: .constant(false), finalText0: .constant("not get"), finalText2: .constant("not get"), finalText3: .constant("not get"))
+    FinalAnimation(isPresented: .constant(false), finalText0: "not get", finalText2: "not get", finalText3: "not get")
 }
