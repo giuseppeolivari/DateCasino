@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
     @State var spinn1 : Bool = false
     @State var spinn2 : Bool = false
@@ -21,31 +20,31 @@ struct ContentView: View {
     //@State  var blockSpinn2 = false
     // @State  var blockSpinn3 = false
     var body: some View {
-            ZStack {
-                    VStack {
-                        GeometryReader { geometry in
-                            Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
-                                .position(x: geometry.size.width / 2, y: geometry.size.height / 3.1)
-                            Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
-                                .position(x: geometry.size.width / 2, y: geometry.size.height / 2.15)
-                        
-                            Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
-                                .position(x: geometry.size.width / 2, y: geometry.size.height / 1.68)
-                        }
-                    }             
-                ZStack {
-                    InterfaceView(animationIsOn: $animationIsOn)
-                    HStack {
-                        Spacer()
-                        Button(action: { }) {
-                            AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, animationIsOn: $animationIsOn, action: toggleSpins)
-                        }.padding(.trailing, 7.0)
-                    }
-                    Button(action: { }) {
-                        GetFinalView(isPresented: $isPresented, finalText0: $finalText0, finalText2: $finalText2, finalText3: $finalText3)
-                    }
+        ZStack {
+            VStack {
+                GeometryReader { geometry in
+                    Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
+                        .position(x: geometry.size.width / 2, y: geometry.size.height / 3.1)
+                    Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
+                        .position(x: geometry.size.width / 2, y: geometry.size.height / 2.15)
+                    
+                    Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
+                        .position(x: geometry.size.width / 2, y: geometry.size.height / 1.68)
                 }
-            } 
+            }
+            ZStack {
+                InterfaceView(animationIsOn: $animationIsOn)
+                HStack {
+                    Spacer()
+                    Button(action: { }) {
+                        AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, animationIsOn: $animationIsOn, action: toggleSpins)
+                    }.padding(.trailing, 7.0)
+                }
+                Button(action: { }) {
+                    GetFinalView(isPresented: $isPresented, finalText0: $finalText0, finalText2: $finalText2, finalText3: $finalText3)
+                }
+            }
+        }
     }
     func toggleSpins() {
         spinn1.toggle()

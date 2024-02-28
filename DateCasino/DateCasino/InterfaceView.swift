@@ -12,22 +12,20 @@ struct InterfaceView: View {
     @State var backgroundLightLevel: Int = 0
     let backgrounds = ["background", "Background_Lights_On"]
     var body: some View {
-            Image(backgrounds[backgroundLightLevel])
-                .resizable()
-                .ignoresSafeArea()
-                .onChange(of: animationIsOn) { newValue in
-                    
-                    if newValue {
-                        if animationIsOn{
-                            print("animationIsOn start: \(animationIsOn)")
-                            startAnimation()
-                        }
+        Image(backgrounds[backgroundLightLevel])
+            .resizable()
+            .ignoresSafeArea()
+            .onChange(of: animationIsOn) { newValue in
+                if newValue {
+                    if animationIsOn{
+                        startAnimation()
                     }
                 }
+            }
     }
     func startAnimation() {
         var counter = 1
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
             withAnimation(.none) {
                 backgroundLightLevel = counter % backgrounds.count
             }
@@ -36,7 +34,7 @@ struct InterfaceView: View {
         // Stop the animation after a certain number of iterations
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             timer.invalidate()
-            let timer2 = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            let timer2 = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
                 withAnimation(.none) {
                     backgroundLightLevel = counter % backgrounds.count
                 }
@@ -46,7 +44,7 @@ struct InterfaceView: View {
                 timer2.invalidate()
                 animationIsOn.toggle()
             }
-        }  
+        }
     }
 }
 
