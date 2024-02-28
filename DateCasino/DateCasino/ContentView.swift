@@ -16,12 +16,11 @@ struct ContentView: View {
     @State var finalText2 = "b"
     @State var finalText3 = "c"
     @State var isPresented : Bool = false
+    @State var animationIsOn = false
     //@State  var blockSpinn = false
     //@State  var blockSpinn2 = false
     // @State  var blockSpinn3 = false
     var body: some View {
-        
-        
             ZStack {
                     VStack {
                         GeometryReader { geometry in
@@ -35,22 +34,18 @@ struct ContentView: View {
                         }
                     }             
                 ZStack {
-                    Image("background")
-                        .resizable()
-                        .ignoresSafeArea()
+                    InterfaceView(animationIsOn: $animationIsOn)
                     HStack {
                         Spacer()
                         Button(action: { }) {
-                            AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, action: toggleSpins)
+                            AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, animationIsOn: $animationIsOn, action: toggleSpins)
                         }.padding(.trailing, 7.0)
                     }
                     Button(action: { }) {
                         GetFinalView(isPresented: $isPresented, finalText0: $finalText0, finalText2: $finalText2, finalText3: $finalText3)
                     }
                 }
-            }
-        
-        
+            } 
     }
     func toggleSpins() {
         spinn1.toggle()

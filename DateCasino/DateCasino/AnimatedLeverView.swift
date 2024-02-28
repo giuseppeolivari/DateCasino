@@ -10,7 +10,7 @@ struct AnimatedLeverView: View {
     @Binding var spinn1 : Bool
     @Binding var spinn2 : Bool
     @Binding var spinn3 : Bool
-    @State private var animationIsOn = false
+    @Binding var animationIsOn: Bool
     @State var action: () -> Void
     @State var leverPosition: Int = 0
     let leverPositions = ["lever1", "lever2", "lever3", "lever4", "lever5", "lever6", "lever7", "lever8" ]
@@ -66,5 +66,5 @@ struct AnimatedLeverView: View {
 }
 
 #Preview {
-    AnimatedLeverView(spinn1: .constant(false),spinn2: .constant(false),spinn3: .constant(false),action: {})
+    AnimatedLeverView(spinn1: .constant(false),spinn2: .constant(false),spinn3: .constant(false), animationIsOn: .constant(false),action: {})
 }
