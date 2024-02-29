@@ -17,15 +17,15 @@ struct Scrollable2: View {
     @Binding var spinn2 : Bool
     
     var attr1 : [String] = ["Cinema",
-                            "Skating",
-                            "Theater",
+                            "Skating".localized(),
+                            "Theater".localized(),
                             "Paintball",
-                            "Amusement park",
-                            "Board game",
+                            "Amusement park".localized(),
+                            "Board game".localized(),
                             "Karaoke",
                             "Trekking",
                             "Bowling",
-                            "Baking",
+                            "Baking".localized(),
                             "Laser tag",
                             "Escape room"]
     

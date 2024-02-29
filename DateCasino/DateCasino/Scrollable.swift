@@ -17,7 +17,18 @@ struct Scrollable: View {
     //@Binding var blockSpinn : Bool
     @Binding var spinn1 : Bool
     
-    var attr1 : [String] = ["Hamburger", "Sushi", "Noodles", "Pizza", "Lasagna", "Steak", "Roasted chicken", "Ice cream", "Kebab", "Pita", "Paella", "Tacos"]
+    var attr1 : [String] = ["Hamburger",
+                            "Sushi",
+                            "Noodles",
+                            "Pizza",
+                            "Lasagna", 
+                            "Steak".localized(),
+                            "Roasted chicken".localized(),
+                            "Ice cream".localized(),
+                            "Kebab",
+                            "Pita",
+                            "Paella",
+                            "Tacos"]
     
     let arr1 = (0..<1000000).map( {_ in Int.random(in: 0...5)} )
     
