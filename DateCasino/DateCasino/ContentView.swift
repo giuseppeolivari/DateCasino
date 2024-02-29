@@ -41,7 +41,7 @@ struct ContentView: View {
                     }.padding(.trailing, 7.0)
                 }
                 Button(action: { }) {
-                    GetFinalView(isPresented: $isPresented, finalText0: $finalText0, finalText2: $finalText2, finalText3: $finalText3)
+                    GetFinalView(isPresented: $isPresented, spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, finalText0: $finalText0, finalText2: $finalText2, finalText3: $finalText3)
                 }
             }
         }
