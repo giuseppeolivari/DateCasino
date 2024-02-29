@@ -45,20 +45,23 @@ struct Scrollable2: View {
                             
                             if index == 0{
                                 Text("Spin!")
-                                    .font(.title)                                .id(index)
-                                    .frame(width: 275, height: 55)
+                                    .font(.title)                                
+                                    .multilineTextAlignment(.center)
+                                    .id(index)
+                                    .frame(width: 275, height: 100)
                             }else{
                                 Text(attr1[arr1[index]])
                                     .font(.title)
+                                    .multilineTextAlignment(.center)
                                     .id(index)
-                                    .frame(width: 275, height: 55)
+                                    .frame(width: 275, height: 100)
                                 
                             }
                         }
                     }
                 }
                 .scrollDisabled(true)
-                .frame(width: 275, height: 60)
+                .frame(width: 275, height: 100)
                 
                 
                 .onChange(of: spinn2) { newValue in

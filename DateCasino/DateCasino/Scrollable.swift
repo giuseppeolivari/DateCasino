@@ -17,7 +17,7 @@ struct Scrollable: View {
     //@Binding var blockSpinn : Bool
     @Binding var spinn1 : Bool
     
-    var attr1 : [String] = ["Hamburger",
+    var attr1 : [String] = ["Hamburger".localized(),
                             "Sushi",
                             "Noodles",
                             "Pizza",
@@ -45,19 +45,22 @@ struct Scrollable: View {
                         ForEach(0..<1000000) { index in
                             if index == 0{
                                 Text("Spin!")
-                                    .font(.title)                                .id(index)
-                                    .frame(width: 275, height: 55)
+                                    .font(.title)                                
+                                    .multilineTextAlignment(.center)
+                                    .id(index)
+                                    .frame(width: 275, height: 100)
                             }else{
                                 Text(attr1[arr1[index]])
                                     .font(.title)
+                                    .multilineTextAlignment(.center)
                                     .id(index)
-                                    .frame(width: 275,height: 55)
+                                    .frame(width: 275,height: 100)
                             }
                         }
                     }
                 }
                 .scrollDisabled(true)
-                .frame(width: 275, height: 60)
+                .frame(width: 275, height: 100)
                 
                 
                 .onChange(of: spinn1) { newValue in

@@ -17,44 +17,52 @@ struct GetFinalView: View {
     @Binding var finalText0: String
     @Binding var finalText2: String
     @Binding var finalText3: String
+    @State var start = true
     var body: some View {
         
         ZStack {
-            if isPresented {
-                if !spinn1 && !spinn2 && !spinn3 {
+            if isPresented && !start{
+                if !spinn1 && !spinn2 && !spinn3 && !start{
                         FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3)
                             .position(x: 193, y: 100)
                             .onAppear() {
                             Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
                                 withAnimation(.easeInOut(duration: 1)) {
                                     self.isPresented.toggle()
-
                                 }
                             }
                             }.transition(.scale)
-                        
-                            
-                    
-                }else{
-                    
                 }
             }
             
             VStack {
                 Button(action: {
-                    if !antiSpam{
+                    if !antiSpam && !start && !spinn1 && !spinn2 && !spinn3{
                         antiSpam = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { antiSpam = false }
                         finalView = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { finalView = false }
                         isPresented.toggle()
-                        
+                        print("fuuuuck")
                     }
                 }, label: {
-                    if !finalView {
-                        Image("Buttonoff")
-                            .resizable()
-                            .frame(width: 170, height: 50)
+                    if start && !spinn1 && !spinn2 && !spinn3 {
+                        Image("grayButton")
+                        .resizable()
+                        .frame(width: 170, height: 50)
+                    } else if !finalView {
+                        if !spinn1 && !spinn2 && !spinn3 {
+                            Image("Buttonoff")
+                                .resizable()
+                                .frame(width: 170, height: 50)
+                        } else {
+                            Image("grayButton")
+                                .resizable()
+                                .frame(width: 170, height: 50)
+                                .onAppear(perform: {
+                                    start = false
+                                })
+                        }
                             
                     } else {
                         Image("pressedbutton")
