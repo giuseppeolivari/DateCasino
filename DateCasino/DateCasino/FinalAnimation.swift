@@ -20,16 +20,7 @@ struct FinalAnimation: View {
             Image("WIN ANIMATION")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            Spacer()
-            HStack {
-                Text("\(finalText0)").font(.title).background(Color.red)
-                Text("\(finalText2)").font(.title).background(Color.red)
-                Text("\(finalText3)").font(.title).background(Color.red)
-            }
-            
-            
-            
-            
+            Spacer()  
         }
     }
 }

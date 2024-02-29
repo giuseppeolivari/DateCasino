@@ -9,10 +9,11 @@ import SwiftUI
 
 struct GetFinalView: View {
     @Binding var isPresented: Bool
+    @State var antiSpam: Bool = false
     @State var finalView: Bool = false
-    @State var spinn1: Bool = false
-    @State var spinn2: Bool = false
-    @State var spinn3: Bool = false
+    @Binding var spinn1: Bool
+    @Binding var spinn2: Bool
+    @Binding var spinn3: Bool
     @Binding var finalText0: String
     @Binding var finalText2: String
     @Binding var finalText3: String
@@ -20,55 +21,47 @@ struct GetFinalView: View {
         
         ZStack {
             if isPresented {
-                withAnimation(.easeIn(duration: 1))
-                {
-                    FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3).onAppear {
-                        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
-                            withAnimation(.easeInOut(duration: 1)) {
-                                self.isPresented.toggle()
-                                spinn1 = false
-                                spinn2 = false
-                                spinn3 = false
+                if !spinn1 && !spinn2 && !spinn3 {
+                        FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3)
+                            .position(x: 193, y: 100)
+                            .onAppear() {
+                            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+                                withAnimation(.easeInOut(duration: 1)) {
+                                    self.isPresented.toggle()
+
+                                }
                             }
+                            }.transition(.scale)
+                        
                             
-                        }
-                    }//.transition(.scale)
+                    
+                }else{
+                    
                 }
             }
             
             VStack {
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
                 Button(action: {
-                    
-                    finalView = true
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { finalView = false }
-                    isPresented.toggle()
+                    if !antiSpam{
+                        antiSpam = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { antiSpam = false }
+                        finalView = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { finalView = false }
+                        isPresented.toggle()
+                        
+                    }
                 }, label: {
                     if !finalView {
                         Image("Buttonoff")
                             .resizable()
                             .frame(width: 170, height: 50)
+                            
                     } else {
                         Image("pressedbutton")
                             .resizable()
                             .frame(width: 170, height: 30)
                     }
                 })
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
             }
         }
         
@@ -77,5 +70,5 @@ struct GetFinalView: View {
 }
 
 #Preview {
-    GetFinalView(isPresented: .constant(false), finalText0: .constant("no get"), finalText2: .constant("no get"), finalText3: .constant("no get"))
+    GetFinalView(isPresented: .constant(false), spinn1: .constant(false), spinn2: .constant(false), spinn3: .constant(false), finalText0: .constant("no get"), finalText2: .constant("no get"), finalText3: .constant("no get"))
 }

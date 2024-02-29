@@ -4,12 +4,12 @@
 
 "Skating" = "Patinaje";
 "Theater" = "Teatro";
-"Amusement park" = "";
-"Board game" = "";
-"Baking" = "";
+"Amusement park" = "Parque de diversiones";
+"Board game" = "Juego de mesa";
+"Baking" = "Hornear";
 
-"Streaptease" = "";
-"Massage" = "";
-"Couple shower" = "";
-"Handcuff" = "";
-"Role play" = "";
+"Streaptease" = "Streaptease";
+"Massage" = "Masaje";
+"Couple shower" = "Ducha en pareja";
+"Handcuff" = "Esposar";
+"Role play" = "Rolear";
