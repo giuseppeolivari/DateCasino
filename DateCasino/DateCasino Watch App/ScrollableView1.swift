@@ -7,30 +7,48 @@
 
 import SwiftUI
 import WatchKit
-
+import TipKit
 
 
 struct ScrollableView1: View {
+    private let tip = CrownTip()
     @State private var test = false
     @State private var scrollAmount = 0.0
     @State private var finalText1 = "Not get"
     @State private var scrollText = false
     @State private var boh = 0
     @State private var cAnimation = 0
-    var attr1 : [String] = ["Hamburger", "Sushi", "Noodles", "Pizza", "Lasagna", "Steak", "Roasted chicken", "Ice cream", "Kebab", "Pita", "Paella", "Tacos"]
-    var attr2 : [String] = ["Cinema",
-                            "Skating",
-                            "Theater",
-                            "Paintball",
-                            "Amusement park",
-                            "Board game",
-                            "Karaoke",
-                            "Trekking",
-                            "Bowling",
-                            "Baking",
-                            "Laser tag",
-                            "Escape room"]
-    var attr3 : [String] = ["Streaptease", "Lap dance", "Massage", "Couple shower", "Handcuff", "Role play"]
+    var attr1: [String] = ["Hamburger",
+                           "Sushi",
+                           "Noodles",
+                           "Pizza",
+                           "Lasagna",
+                           "Steak".localized(),
+                           "Roasted chicken".localized(),
+                           "Ice cream".localized(),
+                           "Kebab",
+                           "Pita",
+                           "Paella",
+                           "Tacos"]
+
+    var attr2 :[String] = ["Cinema",
+                                      "Skating".localized(),
+                                      "Theater".localized(),
+                                      "Paintball",
+                                      "Amusement park".localized(),
+                                      "Board game".localized(),
+                                      "Karaoke",
+                                      "Trekking",
+                                      "Bowling",
+                                      "Baking".localized(),
+                                      "Laser tag",
+                                      "Escape room"]
+    var attr3 : [String] = ["Streaptease".localized(),
+                           "Lap dance",
+                           "Massage".localized(),
+                           "Couple shower".localized(),
+                           "Handcuff".localized(),
+                           "Role play".localized()]
     let arr = (0..<1000).map( {_ in Int.random(in: 0...5)} )
     var body: some View {
        
@@ -40,8 +58,9 @@ struct ScrollableView1: View {
             GeometryReader { geometry in
                 
                 ZStack{
-                  
-                   
+                    
+                       
+                      
           
                         
                     
@@ -51,7 +70,7 @@ struct ScrollableView1: View {
                     ScrollViewReader { scrollView in
                         ScrollView(showsIndicators: false){
                             LazyVStack(){
-                                Text("FOOD")
+                                Text("FOOD".localized())
                                     .fontWeight(.black)
                                     .foregroundColor(.white)
                                 ForEach(0..<1000) { index in
@@ -93,7 +112,7 @@ struct ScrollableView1: View {
                     ScrollViewReader { scrollView in
                         ScrollView(showsIndicators: false){
                             LazyVStack(){
-                                Text("ACTIVITY")
+                                Text("ACTIVITY".localized())
                                     .fontWeight(.black)
                                     .foregroundColor(.white)
                                 ForEach(0..<1000) { index in
@@ -139,7 +158,7 @@ struct ScrollableView1: View {
                     ScrollViewReader { scrollView in
                         ScrollView(showsIndicators: false){
                             LazyVStack(){
-                                Text("PLEASURE")
+                                Text("PLEASURE".localized())
                                     .fontWeight(.black)
                              
                                     .foregroundColor(.white)
@@ -183,6 +202,9 @@ struct ScrollableView1: View {
                  
                     
                 }
+                
+                TipView(tip, arrowEdge: .trailing)
+                    .position(x: geometry.size.width / 2, y: geometry.size.height / 11)
                
                 
                     
