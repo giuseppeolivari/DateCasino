@@ -24,6 +24,7 @@ struct ContentView: View {
             ZStack {
                 VStack {
                     Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
+                        
                         .position(x: geometry.size.width / 2, y: geometry.size.height / 3.1)
                     Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
                         .position(x: geometry.size.width / 2, y: geometry.size.height / 8)
@@ -31,6 +32,9 @@ struct ContentView: View {
                     Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
                         .position(x: geometry.size.width / 2, y: geometry.size.height / -13)
                 }
+                .foregroundColor(.word)
+                .background(.back)
+                .bold()
                 ZStack {
                     InterfaceView(animationIsOn: $animationIsOn)
                     HStack {

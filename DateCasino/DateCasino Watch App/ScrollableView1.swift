@@ -42,24 +42,25 @@ struct ScrollableView1: View {
                 ZStack{
                   
                    
-                    Image("BackgroundWatch")
-                        .resizable()
-                        .ignoresSafeArea()
-                        .frame(width:185,height: 210)
-                        .position(x: geometry.size.width / 2, y: geometry.size.height / 2 )
-                        .background(.gray)
+          
+                        
+                    
                  
                     
                     
                     ScrollViewReader { scrollView in
                         ScrollView(showsIndicators: false){
                             LazyVStack(){
+                                Text("FOOD")
+                                    .fontWeight(.black)
+                                    .foregroundColor(.white)
                                 ForEach(0..<1000) { index in
                                     
                                     Text(attr1[arr[index]])
                                         
+                                        .fontWeight(.black)
                                         .id(index)
-                                        .foregroundColor(.black)
+                                        .foregroundColor(.white)
                                                                      
                                     
                                     
@@ -92,12 +93,16 @@ struct ScrollableView1: View {
                     ScrollViewReader { scrollView in
                         ScrollView(showsIndicators: false){
                             LazyVStack(){
+                                Text("ACTIVITY")
+                                    .fontWeight(.black)
+                                    .foregroundColor(.white)
                                 ForEach(0..<1000) { index in
                                     
                                     Text(attr2[arr[index]])
                                        
+                                        .fontWeight(.black)
                                         .id(index)
-                                        .foregroundColor(.black)
+                                        .foregroundColor(.white)
                                                                      
                                     
                                     
@@ -134,12 +139,17 @@ struct ScrollableView1: View {
                     ScrollViewReader { scrollView in
                         ScrollView(showsIndicators: false){
                             LazyVStack(){
+                                Text("PLEASURE")
+                                    .fontWeight(.black)
+                             
+                                    .foregroundColor(.white)
                                 ForEach(0..<1000) { index in
                                     
                                     Text(attr3[arr[index]])
-        
+                                    
+                                        .fontWeight(.black)
                                         .id(index)
-                                        .foregroundColor(.black)
+                                        .foregroundColor(.white)
                                                                             
                                     
                                 }
@@ -173,23 +183,7 @@ struct ScrollableView1: View {
                  
                     
                 }
-                if(self.cAnimation == 3){
-                    
-                    
-                    withAnimation()
-                    {
-                        
-                        FinalAnimationWatchApp().onAppear {
-                            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
-                                withAnimation(.easeInOut(duration: 1)) {
-                                    self.cAnimation = 0
-                                }
-                                
-                            }
-                        }.ignoresSafeArea()
-                    }
-                    
-                }
+               
                 
                     
                    
@@ -235,7 +229,7 @@ struct ScrollableView1: View {
                 timer.invalidate()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-                    self.cAnimation += 1
+                
                                 })
                 
             }
