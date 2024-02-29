@@ -1,7 +1,9 @@
+"Hamburger" = "Hamburger";
 "Roasted chicken" = "Pollo arrosto";
 "Steak" = "Bistecca";
 "Ice cream" = "Gelato";
 
+"Cinema" = "Cinema";
 "Skating" = "Pattinaggio";
 "Theater" = "Teatro";
 "Amusement park" = "Parco giochi";
@@ -10,6 +12,6 @@
 
 "Streaptease" = "Spogliarello";
 "Massage" = "Massaggio";
-"Couple shower" = "Doccia di coppia";
+"Couple shower" = "Doccia \ndi coppia";
 "Handcuff" = "Manette";
 "Role play" = "Gioco di ruolo";

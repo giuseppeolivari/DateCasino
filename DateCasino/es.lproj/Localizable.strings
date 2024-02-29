@@ -1,10 +1,12 @@
+"Hamburger" = "Hamburguesa";
 "Roasted chicken" = "Pollo asado";
 "Steak" = "Churrasco";
 "Ice cream" = "Helado";
 
+"Cinema" = "Cine";
 "Skating" = "Patinaje";
 "Theater" = "Teatro";
-"Amusement park" = "Parque de diversiones";
+"Amusement park" = "Parque de\n diversiones";
 "Board game" = "Juego de mesa";
 "Baking" = "Hornear";
 
