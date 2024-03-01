@@ -21,6 +21,7 @@
 		069B92802B875DD500330CAA /* Scrollable2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B927F2B875DD500330CAA /* Scrollable2.swift */; };
 		069B92822B875DDF00330CAA /* Scrollable3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B92812B875DDF00330CAA /* Scrollable3.swift */; };
 		069B92862B88978400330CAA /* FinalAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B92852B88978400330CAA /* FinalAnimation.swift */; };
+		14169FF02B91D6390059E537 /* Localizable watch.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14169FF22B91D6390059E537 /* Localizable watch.strings */; };
 		272692D72B8E3B29009EF611 /* GetFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272692D62B8E3B29009EF611 /* GetFinalView.swift */; };
 		272692D92B8F662E009EF611 /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272692D82B8F662E009EF611 /* InterfaceView.swift */; };
 		27BBA7C92B88B6EB000F2EB8 /* AnimatedLeverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBA7C82B88B6EB000F2EB8 /* AnimatedLeverView.swift */; };
@@ -70,6 +71,9 @@
 		069B927F2B875DD500330CAA /* Scrollable2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable2.swift; sourceTree = "<group>"; };
 		069B92812B875DDF00330CAA /* Scrollable3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable3.swift; sourceTree = "<group>"; };
 		069B92852B88978400330CAA /* FinalAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalAnimation.swift; sourceTree = "<group>"; };
+		14169FF12B91D6390059E537 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Localizable watch.strings"; sourceTree = "<group>"; };
+		14169FF32B91D63B0059E537 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = "es.lproj/Localizable watch.strings"; sourceTree = "<group>"; };
+		14169FF42B91D63B0059E537 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = "it.lproj/Localizable watch.strings"; sourceTree = "<group>"; };
 		272692D62B8E3B29009EF611 /* GetFinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFinalView.swift; sourceTree = "<group>"; };
 		272692D82B8F662E009EF611 /* InterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
 		27BBA7C82B88B6EB000F2EB8 /* AnimatedLeverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLeverView.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				068EB2E92B8352A800A9DA6D /* ScrollableView1.swift */,
 				068EB2DB2B83522B00A9DA6D /* Assets.xcassets */,
 				068EB2DD2B83522B00A9DA6D /* Preview Content */,
+				14169FF22B91D6390059E537 /* Localizable watch.strings */,
 			);
 			path = "DateCasino Watch App";
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 			files = (
 				068EB2DF2B83522B00A9DA6D /* Preview Assets.xcassets in Resources */,
 				068EB2DC2B83522B00A9DA6D /* Assets.xcassets in Resources */,
+				14169FF02B91D6390059E537 /* Localizable watch.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +318,16 @@
 				0661014F2B8F42F700BCCA4A /* es */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		14169FF22B91D6390059E537 /* Localizable watch.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14169FF12B91D6390059E537 /* en */,
+				14169FF32B91D63B0059E537 /* es */,
+				14169FF42B91D63B0059E537 /* it */,
+			);
+			name = "Localizable watch.strings";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
