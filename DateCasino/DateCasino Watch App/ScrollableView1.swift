@@ -12,6 +12,7 @@ import TipKit
 
 struct ScrollableView1: View {
     private let tip = CrownTip()
+    
     @State private var test = false
     @State private var scrollAmount = 0.0
     @State private var finalText1 = "Not get"
@@ -72,14 +73,14 @@ struct ScrollableView1: View {
                             LazyVStack(){
                                 Text("FOOD".localized())
                                     .fontWeight(.black)
-                                    .foregroundColor(.color)
+                                    .foregroundColor(.gia)
                                 ForEach(0..<1000) { index in
                                     
                                     Text(attr1[arr[index]])
                                         
                                         .fontWeight(.black)
                                         .id(index)
-                                        .foregroundColor(.color)
+                                        .foregroundColor(.gia)
                                                                      
                                     
                                     
@@ -113,14 +114,14 @@ struct ScrollableView1: View {
                             LazyVStack(){
                                 Text("ACTIVITY".localized())
                                     .fontWeight(.black)
-                                    .foregroundColor(.color)
+                                    .foregroundColor(.gia)
                                 ForEach(0..<1000) { index in
                                     
                                     Text(attr2[arr[index]])
                                        
                                         .fontWeight(.black)
                                         .id(index)
-                                        .foregroundColor(.color)
+                                        .foregroundColor(.gia)
                                                                      
                                     
                                     
@@ -159,14 +160,14 @@ struct ScrollableView1: View {
                                 Text("PLEASURE".localized())
                                     .fontWeight(.black)
                                 
-                                    .foregroundColor(.color)
+                                    .foregroundColor(.gia)
                                 ForEach(0..<1000) { index in
                                     
                                     Text(attr3[arr[index]])
                                     
                                         .fontWeight(.black)
                                         .id(index)
-                                        .foregroundColor(.color)
+                                        .foregroundColor(.gia)
                                     
                                     
                                 }
@@ -202,7 +203,7 @@ struct ScrollableView1: View {
                 
                 TipView(tip, arrowEdge: .trailing)
                     .position(x: geometry.size.width / 2, y: geometry.size.height / 11)
-               
+                    .foregroundColor(.gia)
                 
                     
                    

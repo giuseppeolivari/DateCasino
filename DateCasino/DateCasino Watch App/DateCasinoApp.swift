@@ -11,12 +11,13 @@ import TipKit
 struct CrownTip: Tip{
     var title : Text {
         Text("Use the crown to spin".localized())
-            .foregroundColor(.color)
+            
             
             
             
         
     }
+    
     
         
 }
