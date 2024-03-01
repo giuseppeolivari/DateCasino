@@ -72,21 +72,20 @@ struct ScrollableView1: View {
                             LazyVStack(){
                                 Text("FOOD".localized())
                                     .fontWeight(.black)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.color)
                                 ForEach(0..<1000) { index in
                                     
                                     Text(attr1[arr[index]])
                                         
                                         .fontWeight(.black)
                                         .id(index)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.color)
                                                                      
                                     
                                     
                                 }
                             }
                         }
-                        .foregroundColor(.green)
                         .scrollDisabled(true)
                         .frame(height: 20)
                         .focusable(true)
@@ -114,21 +113,20 @@ struct ScrollableView1: View {
                             LazyVStack(){
                                 Text("ACTIVITY".localized())
                                     .fontWeight(.black)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.color)
                                 ForEach(0..<1000) { index in
                                     
                                     Text(attr2[arr[index]])
                                        
                                         .fontWeight(.black)
                                         .id(index)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.color)
                                                                      
                                     
                                     
                                 }
                             }
                         }
-                        .foregroundColor(.green)
                         .scrollDisabled(true)
                         .frame(height: 20)
                         .focusable(true)
@@ -160,21 +158,20 @@ struct ScrollableView1: View {
                             LazyVStack(){
                                 Text("PLEASURE".localized())
                                     .fontWeight(.black)
-                             
-                                    .foregroundColor(.white)
+                                
+                                    .foregroundColor(.color)
                                 ForEach(0..<1000) { index in
                                     
                                     Text(attr3[arr[index]])
                                     
                                         .fontWeight(.black)
                                         .id(index)
-                                        .foregroundColor(.white)
-                                                                            
+                                        .foregroundColor(.color)
+                                    
                                     
                                 }
                             }
                         }
-                        .foregroundColor(.green)
                         .scrollDisabled(true)
                         .frame(height: 20)
                         .focusable(true)
