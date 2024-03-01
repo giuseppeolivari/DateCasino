@@ -4,11 +4,16 @@
 //
 //  Created by Giuseppe Olivari on 21/02/24.
 //
+
 import SwiftUI
 
 struct Scrollable3: View {
     @Binding var finalText3: String
-    @Binding var spinn3: Bool
+    @State private var scrollText = false
+    @State private var boh = 0
+    @State private var animationIsOn = false
+    //@Binding  var blockSpinn3 : Bool
+    @Binding var spinn3 : Bool
     
     var attr1 : [String] = ["Streaptease".localized(),
                             "Lap dance",
@@ -20,68 +25,73 @@ struct Scrollable3: View {
     let arr1 = (0..<1000000).map( {_ in Int.random(in: 0...5)} )
     
     var body: some View {
-        VStack {
+        VStack{
             ScrollViewReader { scrollView in
-                ScrollView(showsIndicators: false) {
-                    LazyVStack {
+                ScrollView(showsIndicators: false){
+                    LazyVStack(){
                         ForEach(0..<1000000) { index in
-                            if index == 0 {
+                            
+                            if index == 0{
                                 Text("Spin!")
-                                    .font(.title)
+                                    .font(.title)         
                                     .multilineTextAlignment(.center)
                                     .id(index)
                                     .frame(width: 275, height: 100)
-                            } else {
+                            }else{
                                 Text(attr1[arr1[index]])
-                                    .font(.title)
+                                    .font(.title)                                
                                     .multilineTextAlignment(.center)
                                     .id(index)
                                     .frame(width: 275, height: 100)
-                            }
-                        }
-                    }
-                    .onChange(of: spinn3) { newValue in
-                        if newValue {
-                            if spinn3 {
-                                animateWithTimer(proxy: scrollView) {
-                                    print(spinn3)
-                                    spinn3.toggle()
-                                    print(spinn3)
-                                }
                             }
                         }
                     }
                 }
                 .scrollDisabled(true)
                 .frame(width: 275, height: 100)
+                
+                
+                .onChange(of: spinn3) { newValue in
+                    
+                    if newValue {
+                        if spinn3{
+                            animateWithTimer(proxy: scrollView, boh: boh)
+                        }
+                    }
+                }
             }
         }
     }
-    
-    func animateWithTimer(proxy: ScrollViewProxy, completion: @escaping () -> Void) {
-        let animationDuration: TimeInterval = 6.0
-        let framesPerSecond = 60
-        let numberOfFrames = Int(animationDuration * Double(framesPerSecond))
-        let totalDistance = Int(animationDuration * 30) // Adjust the number to control duration of the animation
-        var currentOffset = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 1.0 / Double(framesPerSecond), repeats: true) { timer in
-            currentOffset += 1
-            if currentOffset <= totalDistance {
-                withAnimation(.linear(duration: animationDuration)) {
-                    proxy.scrollTo(currentOffset, anchor: .center)
-                }
-            } else {
-                timer.invalidate()
-                DispatchQueue.main.async {
-                    print("Animation Completed")
-                    completion()
+    func animateWithTimer(proxy: ScrollViewProxy, boh: Int ) {
+        var counter = self.boh
+        var check = 0
+        var random = Int.random(in:(counter + 1000)...(counter+1040))
+        let timer = Timer.scheduledTimer(withTimeInterval: 0, repeats: true) { (timer) in
+            withAnimation(.linear) {
+                proxy.scrollTo(counter, anchor: .center)
+                self.boh = counter
+            }
+            if counter < random {
+                counter += 1
+                check += 1
+            }else{
+                if check == 0{
+                    random = Int.random(in:(counter + 1000)...(counter+1040))
+                }else{
+                    timer.invalidate()
+                    if self.spinn3 == true{
+                        self.spinn3.toggle()
+                        print("3: random is \(random) and counter is \(counter) and check is \(check)")
+                        check = 0
+                        random = Int.random(in:(counter + 1000)...(counter+1040))
+                    }
                 }
             }
         }
-        RunLoop.main.add(timer, forMode: .common)
+        timer.fire()
     }
 }
-
 #Preview {
     Scrollable3(finalText3: .constant("c")/*,blockSpinn3: .constant(false)*/, spinn3: .constant(false))
 }
+

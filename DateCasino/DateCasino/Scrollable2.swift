@@ -4,6 +4,7 @@
 //
 //  Created by Giuseppe Olivari on 21/02/24.
 //
+
 import SwiftUI
 
 struct Scrollable2: View {
@@ -11,7 +12,8 @@ struct Scrollable2: View {
     @State private var scrollText = false
     @State private var boh = 0
     @State private var animationIsOn = false
-    @Binding var spinn2: Bool
+    //@Binding  var blockSpinn2 : Bool
+    @Binding var spinn2 : Bool
     
     var attr1 : [String] = ["Cinema",
                             "Skating".localized(),
@@ -34,18 +36,20 @@ struct Scrollable2: View {
                 ScrollView(showsIndicators: false){
                     LazyVStack(){
                         ForEach(0..<1000000) { index in
+                            
                             if index == 0{
                                 Text("Spin!")
                                     .font(.title)
                                     .multilineTextAlignment(.center)
                                     .id(index)
                                     .frame(width: 275, height: 100)
-                            } else {
+                            }else{
                                 Text(attr1[arr1[index]])
                                     .font(.title)
                                     .multilineTextAlignment(.center)
                                     .id(index)
                                     .frame(width: 275, height: 100)
+                                
                             }
                         }
                     }
@@ -54,44 +58,46 @@ struct Scrollable2: View {
                 .frame(width: 275, height: 100)
                 .onChange(of: spinn2) { newValue in
                     if newValue {
-                        if spinn2 {
-                            animateWithTimer(proxy: scrollView) {
-                                print("spinn2 values are")
-                                print(spinn2)
-                                spinn2.toggle()
-                                print(spinn2)
-                            }
+                        if spinn2{
+                            animateWithTimer(proxy: scrollView, boh: boh)
                         }
                     }
                 }
             }
         }
     }
-    
-    func animateWithTimer(proxy: ScrollViewProxy, completion: @escaping () -> Void) {
-        let animationDuration: TimeInterval = 6.0
-        let framesPerSecond = 60
-        let numberOfFrames = Int(animationDuration * Double(framesPerSecond))
-        let totalDistance = Int(animationDuration * 30) // Adjust the number to control duration of the animation
-        var currentOffset = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 1.0 / Double(framesPerSecond), repeats: true) { timer in
-            currentOffset += 1
-            if currentOffset <= totalDistance {
-                withAnimation(.linear(duration: animationDuration)) {
-                    proxy.scrollTo(currentOffset, anchor: .center)
-                }
-            } else {
-                timer.invalidate()
-                DispatchQueue.main.async {
-                    print("Animation Completed")
-                    completion()
+    func animateWithTimer(proxy: ScrollViewProxy, boh: Int ) {
+        var counter = self.boh
+        var check = 0
+        var random = Int.random(in:(counter + 1000)...(counter+1040))
+        let timer = Timer.scheduledTimer(withTimeInterval: 0, repeats: true) { (timer) in
+            withAnimation(.linear) {
+                proxy.scrollTo(counter, anchor: .center)
+                self.boh = counter
+            }
+            if counter < random {
+                counter += 1
+                check += 1
+            }else{
+                if check == 0{
+                    random = Int.random(in:(counter + 1000)...(counter+1040))
+                }else{
+                    timer.invalidate()
+                    if self.spinn2 == true{
+                        self.spinn2.toggle()
+                        print("3: random is \(random) and counter is \(counter) and check is \(check)")
+                        check = 0
+                        random = Int.random(in:(counter + 1000)...(counter+1040))
+                    }
                 }
             }
         }
-        RunLoop.main.add(timer, forMode: .common)
+        timer.fire()
+        
     }
+    
 }
 #Preview {
-    Scrollable2(finalText2: .constant("b"), spinn2: .constant(false))
+    Scrollable2(finalText2: .constant("b")/*,blockSpinn2: .constant(false)*/, spinn2: .constant(false))
 }
 
