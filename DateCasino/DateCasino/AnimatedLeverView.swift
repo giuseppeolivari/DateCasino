@@ -15,22 +15,21 @@ struct AnimatedLeverView: View {
     @State var leverPosition: Int = 0
     let leverPositions = ["lever1", "lever2", "lever3", "lever4", "lever5", "lever6", "lever7", "lever8" ]
     var body: some View {
-        Button(action: {
-            if(!animationIsOn && !spinn1 && !spinn2 && !spinn3){
-                animationIsOn.toggle()
-                startAnimation()
-                action()
-                print("here does the animation")
-            }else{
-                
+        
+        Image(leverPositions[leverPosition])
+            .resizable()
+            .ignoresSafeArea()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 80, height: 210, alignment: .trailing)
+            .onTapGesture {
+                if(!animationIsOn && !spinn1 && !spinn2 && !spinn3){
+                    animationIsOn.toggle()
+                    startAnimation()
+                    action()
+                    print("here does the animation")
+                }
             }
-        }) {
-            Image(leverPositions[leverPosition])
-                .resizable()
-                .ignoresSafeArea()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 80, height: 210, alignment: .trailing)
-        }
+        
         
     }
     func startAnimation() {

@@ -23,53 +23,62 @@ struct GetFinalView: View {
         ZStack {
             if isPresented && !start{
                 if !spinn1 && !spinn2 && !spinn3 && !start{
-                        FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3)
-                            .position(x: 193, y: 100)
-                            .onAppear() {
+                    FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3)
+                        .position(x: 193, y: 100)
+                        .onAppear() {
                             Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
                                 withAnimation(.easeInOut(duration: 1)) {
                                     self.isPresented.toggle()
                                 }
                             }
-                            }.transition(.scale)
+                        }.transition(.scale)
                 }
             }
             
             VStack {
-                Button(action: {
-                    if !antiSpam && !start && !spinn1 && !spinn2 && !spinn3{
-                        antiSpam = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { antiSpam = false }
-                        finalView = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { finalView = false }
-                        isPresented.toggle()
-                        print("fuuuuck")
-                    }
-                }, label: {
-                    if start && !spinn1 && !spinn2 && !spinn3 {
-                        Image("grayButton")
+                if start && !spinn1 && !spinn2 && !spinn3 {
+                    Image("grayButton")
                         .resizable()
                         .frame(width: 170, height: 50)
-                    } else if !finalView {
-                        if !spinn1 && !spinn2 && !spinn3 {
-                            Image("Buttonoff")
-                                .resizable()
-                                .frame(width: 170, height: 50)
-                        } else {
+                }else{
+                    Button(action: {
+                        if !antiSpam && !start && !spinn1 && !spinn2 && !spinn3{
+                            antiSpam = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { 
+                                antiSpam = false
+                                start = true
+                            }
+                            finalView = true
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { finalView = false }
+                            isPresented.toggle()
+                        }
+                    }, label: {
+                        if start && !spinn1 && !spinn2 && !spinn3 {
                             Image("grayButton")
                                 .resizable()
                                 .frame(width: 170, height: 50)
-                                .onAppear(perform: {
-                                    start = false
-                                })
-                        }
+                        } else if !finalView {
+                            if !spinn1 && !spinn2 && !spinn3 {
+                                Image("Buttonoff")
+                                    .resizable()
+                                    .frame(width: 170, height: 50)
+                            } else {
+                                Image("grayButton")
+                                    .resizable()
+                                    .frame(width: 170, height: 50)
+                            }
                             
-                    } else {
-                        Image("pressedbutton")
-                            .resizable()
-                            .frame(width: 170, height: 30)
-                    }
-                })
+                        } else {
+                            Image("pressedbutton")
+                                .resizable()
+                                .frame(width: 170, height: 30)
+                        }
+                    })
+                    .onAppear(perform: {
+                        start = false
+                    })
+                }
             }
         }
         
