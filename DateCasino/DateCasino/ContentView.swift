@@ -40,7 +40,7 @@ struct ContentView: View {
                     HStack {
                         Spacer()
                         AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, animationIsOn: $animationIsOn, action: toggleSpins)
-                            .padding(.trailing, 7.0)
+                            .padding(.trailing, 10.0)
                     }
                     GetFinalView(isPresented: $isPresented, spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, finalText0: $finalText0, finalText2: $finalText2, finalText3: $finalText3)
                         .position(x: geometry.size.width / 2, y: geometry.size.height / 1.38)
