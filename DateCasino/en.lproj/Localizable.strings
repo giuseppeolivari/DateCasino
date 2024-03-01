@@ -3,6 +3,7 @@
 "Steak" = "Steak";
 "Ice cream" = "Ice cream";
 
+
 "Cinema" = "Cinema";
 "Skating" = "Skating";
 "Theater" = "Theater";
@@ -19,3 +20,6 @@
 "FOOD" = "FOOD";
 "ACTIVITY" = "ACTIVITY";
 "PLEASURE" = "PLEASURE";
+
+
+"Rotate the crown to spin" = "Rotate the crown to spin";
