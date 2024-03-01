@@ -46,6 +46,7 @@ struct ContentView: View {
                         .position(x: geometry.size.width / 2, y: geometry.size.height / 1.38)
                 }
             }
+            
         }
     }
     func toggleSpins() {
