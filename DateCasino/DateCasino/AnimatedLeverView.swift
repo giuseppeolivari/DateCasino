@@ -11,57 +11,68 @@ struct AnimatedLeverView: View {
     @Binding var spinn2 : Bool
     @Binding var spinn3 : Bool
     @Binding var animationIsOn: Bool
-    @State var action: () -> Void
-    @State var leverPosition: Int = 0
+    @State private var leverPosition: Int = 0
+    @State private var dragOffset: CGSize = .zero
+    var action: () -> Void
     let leverPositions = ["lever1", "lever2", "lever3", "lever4", "lever5", "lever6", "lever7", "lever8" ]
     var body: some View {
-        
-        Image(leverPositions[leverPosition])
-            .resizable()
-            .ignoresSafeArea()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 80, height: 210, alignment: .trailing)
-            .onTapGesture {
-                if(!animationIsOn && !spinn1 && !spinn2 && !spinn3){
+        let dragGesture = DragGesture()
+            .onChanged { value in
+                let distance = value.translation.height
+                let positionChange = Int(distance / 20)
+                let newPosition = min(max(self.leverPosition + positionChange, 0), self.leverPositions.count - 1)
+                self.leverPosition = newPosition
+                if !animationIsOn && !spinn1 && !spinn2 && !spinn3 {
                     animationIsOn.toggle()
-                    startAnimation()
-                    action()
-                    print("here does the animation")
+                    //startAnimation()
+                }
+            }
+            .onEnded { _ in
+                self.dragOffset = .zero
+                withAnimation {
+                    self.leverPosition = 0
                 }
             }
         
-        
+        return Image(leverPositions[leverPosition])
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 80, height: 210)
+            .offset(dragOffset)
+            .gesture(dragGesture)
+            .animation(.none)
+            .onChange(of: leverPosition) { newValue in
+                            if newValue == leverPositions.count - 1 {
+                                action()
+                                self.animationIsOn.toggle()
+                            }
+                        }
     }
-    func startAnimation() {
-        
-        var counter = 1
-        
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            withAnimation(.none) {
-                leverPosition = counter % leverPositions.count
-            }
-            counter += 1
-        }
-        
-        // Stop the animation after a certain number of iterations
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-            timer.invalidate()
-            let timer2 = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-                withAnimation(.none) {
-                    leverPosition = counter % leverPositions.count
-                }
-                counter -= 1
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-                timer2.invalidate()
-                animationIsOn.toggle()
-            }
-            
-        }
-        
-        
-        
-    }
+    
+//    func startAnimation() {
+//        var counter = 1
+//        
+//        let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+//            withAnimation(.none) {
+//                leverPosition = counter % leverPositions.count
+//            }
+//            counter += 1
+//        }
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+//            timer.invalidate()
+//            let timer2 = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+//                withAnimation(.none) {
+//                    leverPosition = counter % leverPositions.count
+//                }
+//                counter -= 1
+//            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+//                timer2.invalidate()
+//                animationIsOn.toggle()
+//            }
+//        }
+//    }
 }
 
 #Preview {
