@@ -205,7 +205,24 @@ struct ScrollableView1: View {
                     .position(x: geometry.size.width / 2, y: geometry.size.height / 11)
                     .foregroundColor(.gia)
                 
+                
+                if(cAnimation == 3){
+                  
+                        Image("WIN ANIMATION")
+                            .resizable()
+                            .frame(width: 220,height: 130)
+                            .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                            .onAppear() {
+                                Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+                                    withAnimation(.easeInOut(duration: 1)) {
+                                        cAnimation = 0
+                                    }
+                                }
+                            }.transition(.opacity)
+                         
+                        
                     
+                }
                    
                     
                
@@ -248,8 +265,8 @@ struct ScrollableView1: View {
                 
                 timer.invalidate()
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-                
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+                cAnimation += 1
                                 })
                 
             }
