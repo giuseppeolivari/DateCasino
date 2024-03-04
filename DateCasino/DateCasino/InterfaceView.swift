@@ -10,23 +10,27 @@ import SwiftUI
 struct InterfaceView: View {
     @Binding var animationIsOn: Bool
     @State var backgroundLightLevel: Int = 0
-    let backgrounds = ["background", "Background_Lights_On"]
+    let backgrounds = ["slot1", "slot2", "slot3", "slot4"]
     var body: some View {
-        GeometryReader { geometryReader in
+        
           
             
-            Image(backgrounds[backgroundLightLevel])
-                .resizable()
-                .frame(width: geometryReader.size.width / 2, height: geometryReader.size.height / 2)
-                .ignoresSafeArea()
-                .onChange(of: animationIsOn) { newValue in
-                    if newValue {
-                        if animationIsOn{
-                            startAnimation()
+            ZStack {
+           
+                
+                GeometryReader { geometryReader in  Image(backgrounds[backgroundLightLevel])
+                        .resizable()
+                        .position(x: geometryReader.size.width / 2,y: geometryReader.size.height / 1.81)
+                        .onChange(of: animationIsOn) { newValue in
+                            if newValue {
+                                if animationIsOn{
+                                    startAnimation()
+                                }
+                            }
                         }
-                    }
+                }
             }
-        }
+        
     }
     func startAnimation() {
         var counter = 1

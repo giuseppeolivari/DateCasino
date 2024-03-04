@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "vertical lights.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "slot2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

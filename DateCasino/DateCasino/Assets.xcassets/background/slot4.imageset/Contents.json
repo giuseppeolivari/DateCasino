@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "slot4.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "slot4.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
