@@ -37,8 +37,8 @@ struct ContentView: View {
                         .position(x: geometry.size.width / 2, y: geometry.size.height / -17)
                 }
                 .foregroundColor(.word)
-                .background(Image("Background"))
-                .background(.back)
+                .background(Image("Background").resizable().aspectRatio(contentMode: .fill).ignoresSafeArea())
+                //.background(.back)
                 .bold()
                 ZStack {
                     InterfaceView(animationIsOn: $animationIsOn)
