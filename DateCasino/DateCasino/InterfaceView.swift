@@ -12,16 +12,21 @@ struct InterfaceView: View {
     @State var backgroundLightLevel: Int = 0
     let backgrounds = ["background", "Background_Lights_On"]
     var body: some View {
-        Image(backgrounds[backgroundLightLevel])
-            .resizable()
-            .ignoresSafeArea()
-            .onChange(of: animationIsOn) { newValue in
-                if newValue {
-                    if animationIsOn{
-                        startAnimation()
+        GeometryReader { geometryReader in
+          
+            
+            Image(backgrounds[backgroundLightLevel])
+                .resizable()
+                .frame(width: geometryReader.size.width / 2, height: geometryReader.size.height / 2)
+                .ignoresSafeArea()
+                .onChange(of: animationIsOn) { newValue in
+                    if newValue {
+                        if animationIsOn{
+                            startAnimation()
+                        }
                     }
-                }
             }
+        }
     }
     func startAnimation() {
         var counter = 1
