@@ -19,7 +19,7 @@ struct AnimatedLeverView: View {
         let dragGesture = DragGesture()
             .onChanged { value in
                 let distance = value.translation.height
-                let positionChange = Int(distance / 20)
+                let positionChange = Int(distance / 100)
                 let newPosition = min(max(self.leverPosition + positionChange, 0), self.leverPositions.count - 1)
                 self.leverPosition = newPosition
                 if !animationIsOn && !spinn1 && !spinn2 && !spinn3 {
