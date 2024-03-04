@@ -61,9 +61,13 @@ struct ScrollableView1: View {
                 ZStack{
                     
                        
+                      Image("Light1")
                       
+                        .position(x: geometry.size.width / 1.06, y: geometry.size.height / 2)
           
-                        
+                    Image("Light1")
+                    
+                        .position(x: geometry.size.width / 17.06, y: geometry.size.height / 2)
                     
                  
                     
@@ -81,6 +85,7 @@ struct ScrollableView1: View {
                                         .fontWeight(.black)
                                         .id(index)
                                         .foregroundColor(.gia)
+                                        .frame(height: 20)
                                                                      
                                     
                                     
@@ -122,6 +127,7 @@ struct ScrollableView1: View {
                                         .fontWeight(.black)
                                         .id(index)
                                         .foregroundColor(.gia)
+                                        .frame(height: 25)
                                                                      
                                     
                                     
@@ -129,7 +135,7 @@ struct ScrollableView1: View {
                             }
                         }
                         .scrollDisabled(true)
-                        .frame(height: 20)
+                        .frame(height: 25)
                         .focusable(true)
                         .digitalCrownRotation($scrollAmount, from: -1, through: 0, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
                         .scrollIndicators(.hidden)
@@ -168,13 +174,14 @@ struct ScrollableView1: View {
                                         .fontWeight(.black)
                                         .id(index)
                                         .foregroundColor(.gia)
+                                        .frame(height: 25)
                                     
                                     
                                 }
                             }
                         }
                         .scrollDisabled(true)
-                        .frame(height: 20)
+                        .frame(height: 25)
                         .focusable(true)
                         .digitalCrownRotation($scrollAmount, from: -1, through: 0, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
                         .scrollIndicators(.hidden)
