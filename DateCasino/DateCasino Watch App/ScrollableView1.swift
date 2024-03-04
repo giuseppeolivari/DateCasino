@@ -15,8 +15,6 @@ struct ScrollableView1: View {
     
     @State private var test = false
     @State private var scrollAmount = 0.0
-    @State private var finalText1 = "Not get"
-    @State private var scrollText = false
     @State private var boh = 0
     @State private var cAnimation = 0
     var attr1: [String] = ["Hamburger",
@@ -64,7 +62,8 @@ struct ScrollableView1: View {
                       Image("Light1")
                       
                         .position(x: geometry.size.width / 1.06, y: geometry.size.height / 2)
-          
+                    
+                    
                     Image("Light1")
                     
                         .position(x: geometry.size.width / 17.06, y: geometry.size.height / 2)
@@ -242,6 +241,10 @@ struct ScrollableView1: View {
             
            
             
+    }
+    
+    func lightOnOffAnimation(){
+        
     }
    
     func animateWithTimer(proxy: ScrollViewProxy, boh: Int ) {
