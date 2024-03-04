@@ -43,7 +43,10 @@ struct AnimatedLeverView: View {
             .animation(.none)
             .onChange(of: leverPosition) { newValue in
                             if newValue == leverPositions.count - 1 {
-                                action()
+                                if animationIsOn && !spinn1 && !spinn2 && !spinn3 {
+                                    action()
+                                    print("spamming")
+                                }
                                 self.animationIsOn.toggle()
                             }
                         }

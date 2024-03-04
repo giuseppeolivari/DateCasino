@@ -39,19 +39,19 @@ struct Scrollable2: View {
                                     .font(.title)
                                     .multilineTextAlignment(.center)
                                     .id(index)
-                                    .frame(width: 275, height: 100)
+                                    .frame(width: 250, height: 100)
                             } else {
                                 Text(attr1[arr1[index]])
                                     .font(.title)
                                     .multilineTextAlignment(.center)
                                     .id(index)
-                                    .frame(width: 275, height: 100)
+                                    .frame(width: 250, height: 100)
                             }
                         }
                     }
                 }
                 .scrollDisabled(true)
-                .frame(width: 275, height: 100)
+                .frame(width: 250, height: 100)
                 .onChange(of: spinn2) { newValue in
                     if newValue {
                         if spinn2 {
