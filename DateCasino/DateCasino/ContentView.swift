@@ -16,14 +16,9 @@ struct ContentView: View {
     @State var finalText3 = "c"
     @State var isPresented : Bool = false
     @State var animationIsOn = false
-    //@State  var blockSpinn = false
-    //@State  var blockSpinn2 = false
-    // @State  var blockSpinn3 = false
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                
-                
                 VStack {
                     Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
                         .background(.black)
@@ -38,7 +33,6 @@ struct ContentView: View {
                 }
                 .foregroundColor(.word)
                 .background(Image("Background").resizable().aspectRatio(contentMode: .fill).ignoresSafeArea())
-                //.background(.back)
                 .bold()
                 ZStack {
                     InterfaceView(animationIsOn: $animationIsOn)
@@ -50,11 +44,8 @@ struct ContentView: View {
                     }
                     GetFinalView(isPresented: $isPresented, spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, finalText0: $finalText0, finalText2: $finalText2, finalText3: $finalText3)
                         .position(x: geometry.size.width / 2, y: geometry.size.height / 1.38)
-                }
-                
+                }  
             }
-            
-            
         }
     }
     func toggleSpins() {

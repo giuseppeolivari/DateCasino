@@ -10,7 +10,7 @@ import SwiftUI
 struct InterfaceView: View {
     @Binding var animationIsOn: Bool
     @State var backgroundLightLevel: Int = 0
-    let backgrounds = ["slot1", "slot2", "slot3", "slot4"]
+    let backgrounds = ["slot1".localized(), "slot2".localized(), "slot3".localized(), "slot4".localized()]
     var body: some View {
         
           
@@ -34,7 +34,7 @@ struct InterfaceView: View {
     }
     func startAnimation() {
         var counter = 1
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             withAnimation(.none) {
                 backgroundLightLevel = counter % backgrounds.count
             }
@@ -43,7 +43,7 @@ struct InterfaceView: View {
         // Stop the animation after a certain number of iterations
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             timer.invalidate()
-            let timer2 = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
+            let timer2 = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
                 withAnimation(.none) {
                     backgroundLightLevel = counter % backgrounds.count
                 }

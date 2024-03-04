@@ -66,7 +66,7 @@ struct Scrollable: View {
     }
     func animateWithTimer(proxy: ScrollViewProxy, completion: @escaping () -> Void) {
         let animationDuration: TimeInterval = 6.0
-        let framesPerSecond = 120
+        let framesPerSecond = 60
         let numberOfFrames = Int(animationDuration * Double(framesPerSecond))
         let totalDistance = Int(animationDuration * 30) // Adjust the number to control duration of the animation
         var currentOffset = 0
