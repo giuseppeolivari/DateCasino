@@ -232,12 +232,16 @@ struct ScrollableView1: View {
                     .foregroundColor(.gia)
                 
                 
+                
+                
+                
+                
                 if(cAnimation == 3){
                   
                         Image("WIN ANIMATION")
                         
                             .resizable()
-                            .frame(width: 220,height: 130)
+                            .frame(width: geometry.size.width * 1.03   ,height: geometry.size.height / 1.2 )
                             .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
                             .onAppear() {
                                 Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
