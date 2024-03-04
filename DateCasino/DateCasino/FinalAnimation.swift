@@ -20,7 +20,7 @@ struct FinalAnimation: View {
             Image("WIN ANIMATION")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            Spacer()  
+            Spacer()
         }
     }
 }

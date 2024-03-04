@@ -28,8 +28,8 @@ struct GetFinalView: View {
                         .onAppear() {
                             Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { timer in
                                 withAnimation(.easeOut(duration: 2)){
-                                        self.isPresented.toggle()
-                                    }
+                                    self.isPresented.toggle()
+                                }
                             }
                         }.transition(.scale)
                 }
@@ -44,7 +44,7 @@ struct GetFinalView: View {
                     Button(action: {
                         if !antiSpam && !start && !spinn1 && !spinn2 && !spinn3{
                             antiSpam = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { 
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                                 antiSpam = false
                                 start = true
                             }
