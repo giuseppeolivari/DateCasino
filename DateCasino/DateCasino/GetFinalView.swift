@@ -27,9 +27,7 @@ struct GetFinalView: View {
                         .position(x: 193, y: 100)
                         .onAppear() {
                             Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
-                                withAnimation(.easeInOut(duration: 1)) {
                                     self.isPresented.toggle()
-                                }
                             }
                         }.transition(.scale)
                 }
@@ -51,7 +49,9 @@ struct GetFinalView: View {
                             finalView = true
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { finalView = false }
-                            isPresented.toggle()
+                            withAnimation(.easeInOut){
+                                isPresented.toggle()
+                            }
                         }
                     }, label: {
                         if start && !spinn1 && !spinn2 && !spinn3 {
