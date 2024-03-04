@@ -12,11 +12,15 @@ import TipKit
 
 struct ScrollableView1: View {
     private let tip = CrownTip()
-    
+    @State var backgroundLightLevel: Int = 0
+    let backgrounds = ["Light1","Light2"]
     @State private var test = false
     @State private var scrollAmount = 0.0
     @State private var boh = 0
     @State private var cAnimation = 0
+    @State var bell = false
+    @State var lightCounter = 0
+    let light = ["Light1", "Light2"]
     var attr1: [String] = ["Hamburger",
                            "Sushi",
                            "Noodles",
@@ -59,15 +63,29 @@ struct ScrollableView1: View {
                 ZStack{
                     
                        
-                      Image("Light1")
+                    Image(light[lightCounter])
+                            .position(x: geometry.size.width / 1.06, y: geometry.size.height / 2)
+                            .onChange(of: bell) {
+                                
+                                    if bell{
+                                        startAnimation()
+                                    }
+                                
+                            }
                       
-                        .position(x: geometry.size.width / 1.06, y: geometry.size.height / 2)
+                    Image(light[lightCounter])
+                            .position(x: geometry.size.width / 14, y: geometry.size.height / 2)
+                            .onChange(of: bell) {
+                                
+                                    if bell{
+                                        startAnimation()
+                                    }
+                                
+                            }
+                        
                     
                     
-                    Image("Light1")
-                    
-                        .position(x: geometry.size.width / 17.06, y: geometry.size.height / 2)
-                    
+                 
                  
                     
                     
@@ -102,7 +120,7 @@ struct ScrollableView1: View {
                                 animateWithTimer(proxy: scrollView, boh: self.boh)
                                 
                             }
-                        } .position(x: geometry.size.width / 2, y: geometry.size.height / 11)
+                        } .position(x: geometry.size.width / 2, y: geometry.size.height / 7)
                         
         //                .onChange(of: test){
         //                    newValue in
@@ -124,6 +142,7 @@ struct ScrollableView1: View {
                                     Text(attr2[arr[index]])
                                        
                                         .fontWeight(.black)
+                                        
                                         .id(index)
                                         .foregroundColor(.gia)
                                         .frame(height: 25)
@@ -157,7 +176,7 @@ struct ScrollableView1: View {
                         
                         
                     }
-                    .position(x: geometry.size.width / 2, y: geometry.size.height / 2.2)
+                    .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
                     
                     ScrollViewReader { scrollView in
                         ScrollView(showsIndicators: false){
@@ -188,6 +207,7 @@ struct ScrollableView1: View {
                         .onChange(of: scrollAmount){
                             if(scrollAmount == -1){
                                 animateWithTimer(proxy: scrollView, boh: self.boh)
+                                startAnimation()
                                 
                             }
                         }
@@ -215,6 +235,7 @@ struct ScrollableView1: View {
                 if(cAnimation == 3){
                   
                         Image("WIN ANIMATION")
+                        
                             .resizable()
                             .frame(width: 220,height: 130)
                             .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
@@ -224,7 +245,9 @@ struct ScrollableView1: View {
                                         cAnimation = 0
                                     }
                                 }
-                            }.transition(.opacity)
+                            }
+                            .transition(.scale)
+                            
                          
                         
                     
@@ -242,9 +265,28 @@ struct ScrollableView1: View {
            
             
     }
-    
-    func lightOnOffAnimation(){
-        
+    func startAnimation() {
+        var counter = 1
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
+            withAnimation(.none) {
+                lightCounter = counter % light.count
+            }
+            counter += 1
+        }
+        // Stop the animation after a certain number of iterations
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            timer.invalidate()
+            let timer2 = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
+                withAnimation(.none) {
+                    lightCounter = counter % light.count
+                }
+                counter -= 1
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                timer2.invalidate()
+                bell.toggle()
+            }
+        }
     }
    
     func animateWithTimer(proxy: ScrollViewProxy, boh: Int ) {
@@ -276,7 +318,13 @@ struct ScrollableView1: View {
                 timer.invalidate()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-                cAnimation += 1
+                    if(cAnimation != 2){
+                        cAnimation += 1}
+                    else{
+                        withAnimation(.easeIn){
+                            cAnimation += 1
+                        }
+                    }
                                 })
                 
             }
