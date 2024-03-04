@@ -27,14 +27,14 @@ struct ContentView: View {
                 VStack {
                     Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
                         .background(.black)
-                        .position(x: geometry.size.width / 2, y: geometry.size.height / 3.1)
+                        .position(x: geometry.size.width / 2, y: geometry.size.height / 2.9)
                     Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
                         .background(.black)
-                        .position(x: geometry.size.width / 2, y: geometry.size.height / 8)
+                        .position(x: geometry.size.width / 2, y: geometry.size.height / 7)
                     
                     Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
                         .background(.black)
-                        .position(x: geometry.size.width / 2, y: geometry.size.height / -13)
+                        .position(x: geometry.size.width / 2, y: geometry.size.height / -17)
                 }
                 .foregroundColor(.word)
                 .background(Image("Background"))
