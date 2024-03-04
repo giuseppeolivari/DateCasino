@@ -26,8 +26,10 @@ struct GetFinalView: View {
                     FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3)
                         .position(x: 193, y: 100)
                         .onAppear() {
-                            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
-                                    self.isPresented.toggle()
+                            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { timer in
+                                withAnimation(.easeOut(duration: 2)){
+                                        self.isPresented.toggle()
+                                    }
                             }
                         }.transition(.scale)
                 }
@@ -49,7 +51,7 @@ struct GetFinalView: View {
                             finalView = true
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { finalView = false }
-                            withAnimation(.easeInOut){
+                            withAnimation(.easeIn(duration: 1)){
                                 isPresented.toggle()
                             }
                         }
