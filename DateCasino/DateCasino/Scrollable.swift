@@ -88,7 +88,7 @@ struct Scrollable: View {
     func animateWithTimer(proxy: ScrollViewProxy, completion: @escaping () -> Void) {
         let animationDuration: TimeInterval = 10.0
         let framesPerSecond = 60
-        let totalDistance = Int(animationDuration * 30)
+        let totalDistance = Int(animationDuration * 20)
         var currentOffset = 0
         let timer = Timer.scheduledTimer(withTimeInterval: 1.0 / Double(framesPerSecond), repeats: true) { timer in
             currentOffset += 1
@@ -100,6 +100,7 @@ struct Scrollable: View {
                 timer.invalidate()
                 DispatchQueue.main.async {
                     print("Animation Completed")
+                    spinn1.toggle()
                     completion()
                 }
             }
