@@ -54,59 +54,60 @@ struct Scrollable2: View {
                 .onChange(of: spinn2) { newValue in
                     if newValue {
                         if spinn2 {
-                            animateWithTimer(proxy: scrollView, boh: self.boh)
+                            animateWithTimer(proxy: scrollView/*, boh: self.boh*/){
                                 print("spinn2 values are")
-//                                print(spinn2)
-//                                spinn2.toggle()
-//                                print(spinn2)
+                                //                                print(spinn2)
+                                //                                spinn2.toggle()
+                                //                                print(spinn2)
+                            }
                         }
                     }
                 }
             }
         }
     }
-    func animateWithTimer(proxy: ScrollViewProxy, boh: Int ) {
-        let count: Int = 8
-        let duration: Double = 1.0
-        let timeInterval: Double = (duration / Double(count))
-        var counter = self.boh
-        let random = Int.random(in:(counter + 30)...(counter+70))
-        let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
-            withAnimation(.default) {
-                proxy.scrollTo(counter, anchor: .center)
-                self.boh = counter
-            }
-            if counter < random {
-                counter+=1
-                
-            }else{
+    //    func animateWithTimer(proxy: ScrollViewProxy, boh: Int ) {
+    //        let count: Int = 8
+    //        let duration: Double = 1.0
+    //        let timeInterval: Double = (duration / Double(count))
+    //        var counter = self.boh
+    //        let random = Int.random(in:(counter + 30)...(counter+70))
+    //        let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
+    //            withAnimation(.default) {
+    //                proxy.scrollTo(counter, anchor: .center)
+    //                self.boh = counter
+    //            }
+    //            if counter < random {
+    //                counter+=1
+    //
+    //            }else{
+    //                timer.invalidate()
+    //                spinn2.toggle()
+    //            }
+    //        }
+    //        timer.fire()
+    //    }
+    func animateWithTimer(proxy: ScrollViewProxy, completion: @escaping () -> Void) {
+        let animationDuration: TimeInterval = 10.0
+        let framesPerSecond = 8
+        let totalDistance = Int(animationDuration * 10)
+        var currentOffset = 0
+        let timer = Timer.scheduledTimer(withTimeInterval: 1.0 / Double(framesPerSecond), repeats: true) { timer in
+            currentOffset += 1
+            if currentOffset <= totalDistance {
+                withAnimation(.linear(duration: animationDuration)) {
+                    proxy.scrollTo(currentOffset, anchor: .center)
+                }
+            } else {
                 timer.invalidate()
-                spinn2.toggle()
+                DispatchQueue.main.async {
+                    print("Animation Completed")
+                    completion()
+                }
             }
         }
-        timer.fire()
+        RunLoop.main.add(timer, forMode: .common)
     }
-//    func animateWithTimer(proxy: ScrollViewProxy, completion: @escaping () -> Void) {
-//        let animationDuration: TimeInterval = 4.0
-//        let framesPerSecond = 8
-//        let totalDistance = Int(animationDuration * 10) // Adjust the number to control duration of the animation
-//        var currentOffset = 0
-//        let timer = Timer.scheduledTimer(withTimeInterval: 1.0 / Double(framesPerSecond), repeats: true) { timer in
-//            currentOffset += 1
-//            if currentOffset <= totalDistance {
-//                withAnimation(.linear(duration: animationDuration)) {
-//                    proxy.scrollTo(currentOffset, anchor: .center)
-//                }
-//            } else {
-//                timer.invalidate()
-//                DispatchQueue.main.async {
-//                    print("Animation Completed")
-//                    completion()
-//                }
-//            }
-//        }
-//        RunLoop.main.add(timer, forMode: .common)
-//    }
 }
 #Preview {
     Scrollable2(spinn2: .constant(false))
