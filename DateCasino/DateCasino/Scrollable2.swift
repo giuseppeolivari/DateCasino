@@ -56,9 +56,9 @@ struct Scrollable2: View {
                         if spinn2 {
                             animateWithTimer(proxy: scrollView, boh: self.boh)
                                 print("spinn2 values are")
-                                print(spinn2)
-                                spinn2.toggle()
-                                print(spinn2)
+//                                print(spinn2)
+//                                spinn2.toggle()
+//                                print(spinn2)
                         }
                     }
                 }
@@ -81,6 +81,7 @@ struct Scrollable2: View {
                 
             }else{
                 timer.invalidate()
+                spinn2.toggle()
             }
         }
         timer.fire()
