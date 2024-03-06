@@ -38,6 +38,7 @@ struct AnimatedLeverView: View {
             .frame(width: 80, height: 210)
             .offset(dragOffset)
             .gesture(dragGesture)
+            .animation(.none)
             .onChange(of: leverPosition) { newValue in
                 if newValue == leverPositions.count - 1 {
                     if animationIsOn && !spinn1 && !spinn2 && !spinn3 {

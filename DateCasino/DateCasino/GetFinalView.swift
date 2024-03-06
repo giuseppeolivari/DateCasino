@@ -14,16 +14,12 @@ struct GetFinalView: View {
     @Binding var spinn1: Bool
     @Binding var spinn2: Bool
     @Binding var spinn3: Bool
-    @Binding var finalText0: String
-    @Binding var finalText2: String
-    @Binding var finalText3: String
     @State var start = true
     var body: some View {
-        
         ZStack {
             if isPresented && !start{
                 if !spinn1 && !spinn2 && !spinn3 && !start{
-                    FinalAnimation(isPresented: $isPresented, finalText0: finalText0, finalText2: finalText2, finalText3: finalText3)
+                    FinalAnimation(isPresented: $isPresented)
                         .position(x: 193, y: 100)
                         .onAppear() {
                             Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { timer in
@@ -34,7 +30,6 @@ struct GetFinalView: View {
                         }.transition(.scale)
                 }
             }
-            
             VStack {
                 if start && !spinn1 && !spinn2 && !spinn3 {
                     Image("grayButton")
@@ -49,7 +44,6 @@ struct GetFinalView: View {
                                 start = true
                             }
                             finalView = true
-                            
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { finalView = false }
                             withAnimation(.easeIn(duration: 1)){
                                 isPresented.toggle()
@@ -70,7 +64,6 @@ struct GetFinalView: View {
                                     .resizable()
                                     .frame(width: 170, height: 50)
                             }
-                            
                         } else {
                             Image("pressedbutton")
                                 .resizable()
@@ -83,11 +76,9 @@ struct GetFinalView: View {
                 }
             }
         }
-        
-        
     }
 }
 
 #Preview {
-    GetFinalView(isPresented: .constant(false), spinn1: .constant(false), spinn2: .constant(false), spinn3: .constant(false), finalText0: .constant("no get"), finalText2: .constant("no get"), finalText3: .constant("no get"))
+    GetFinalView(isPresented: .constant(false), spinn1: .constant(false), spinn2: .constant(false), spinn3: .constant(false))
 }

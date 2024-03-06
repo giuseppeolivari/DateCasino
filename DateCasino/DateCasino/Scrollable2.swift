@@ -7,7 +7,6 @@
 import SwiftUI
 
 struct Scrollable2: View {
-    @Binding var finalText2: String
     @State private var scrollText = false
     @State private var boh = 0
     @State private var animationIsOn = false
@@ -55,43 +54,60 @@ struct Scrollable2: View {
                 .onChange(of: spinn2) { newValue in
                     if newValue {
                         if spinn2 {
-                            animateWithTimer(proxy: scrollView) {
+                            animateWithTimer(proxy: scrollView, boh: self.boh)
                                 print("spinn2 values are")
                                 print(spinn2)
                                 spinn2.toggle()
                                 print(spinn2)
-                            }
                         }
                     }
                 }
             }
         }
     }
-    
-    func animateWithTimer(proxy: ScrollViewProxy, completion: @escaping () -> Void) {
-        let animationDuration: TimeInterval = 6.0
-        let framesPerSecond = 60
-        let numberOfFrames = Int(animationDuration * Double(framesPerSecond))
-        let totalDistance = Int(animationDuration * 30) // Adjust the number to control duration of the animation
-        var currentOffset = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 1.0 / Double(framesPerSecond), repeats: true) { timer in
-            currentOffset += 1
-            if currentOffset <= totalDistance {
-                withAnimation(.linear(duration: animationDuration)) {
-                    proxy.scrollTo(currentOffset, anchor: .center)
-                }
-            } else {
+    func animateWithTimer(proxy: ScrollViewProxy, boh: Int ) {
+        let count: Int = 8
+        let duration: Double = 1.0
+        let timeInterval: Double = (duration / Double(count))
+        var counter = self.boh
+        let random = Int.random(in:(counter + 30)...(counter+70))
+        let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
+            withAnimation(.default) {
+                proxy.scrollTo(counter, anchor: .center)
+                self.boh = counter
+            }
+            if counter < random {
+                counter+=1
+                
+            }else{
                 timer.invalidate()
-                DispatchQueue.main.async {
-                    print("Animation Completed")
-                    completion()
-                }
             }
         }
-        RunLoop.main.add(timer, forMode: .common)
+        timer.fire()
     }
+//    func animateWithTimer(proxy: ScrollViewProxy, completion: @escaping () -> Void) {
+//        let animationDuration: TimeInterval = 4.0
+//        let framesPerSecond = 8
+//        let totalDistance = Int(animationDuration * 10) // Adjust the number to control duration of the animation
+//        var currentOffset = 0
+//        let timer = Timer.scheduledTimer(withTimeInterval: 1.0 / Double(framesPerSecond), repeats: true) { timer in
+//            currentOffset += 1
+//            if currentOffset <= totalDistance {
+//                withAnimation(.linear(duration: animationDuration)) {
+//                    proxy.scrollTo(currentOffset, anchor: .center)
+//                }
+//            } else {
+//                timer.invalidate()
+//                DispatchQueue.main.async {
+//                    print("Animation Completed")
+//                    completion()
+//                }
+//            }
+//        }
+//        RunLoop.main.add(timer, forMode: .common)
+//    }
 }
 #Preview {
-    Scrollable2(finalText2: .constant("b"), spinn2: .constant(false))
+    Scrollable2(spinn2: .constant(false))
 }
 

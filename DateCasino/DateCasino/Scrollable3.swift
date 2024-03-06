@@ -7,9 +7,8 @@
 import SwiftUI
 
 struct Scrollable3: View {
-    @Binding var finalText3: String
     @Binding var spinn3: Bool
-    
+    @State private var boh = 0
     var attr1 : [String] = ["Streaptease".localized(),
                             "Lap dance",
                             "Massage".localized(),
@@ -43,11 +42,11 @@ struct Scrollable3: View {
                     .onChange(of: spinn3) { newValue in
                         if newValue {
                             if spinn3 {
-                                animateWithTimer(proxy: scrollView) {
+                                animateWithTimer(proxy: scrollView, boh: self.boh)
                                     print(spinn3)
                                     spinn3.toggle()
                                     print(spinn3)
-                                }
+                                
                             }
                         }
                     }
@@ -57,31 +56,50 @@ struct Scrollable3: View {
             }
         }
     }
-    
-    func animateWithTimer(proxy: ScrollViewProxy, completion: @escaping () -> Void) {
-        let animationDuration: TimeInterval = 6.0
-        let framesPerSecond = 60
-        let numberOfFrames = Int(animationDuration * Double(framesPerSecond))
-        let totalDistance = Int(animationDuration * 30) // Adjust the number to control duration of the animation
-        var currentOffset = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 1.0 / Double(framesPerSecond), repeats: true) { timer in
-            currentOffset += 1
-            if currentOffset <= totalDistance {
-                withAnimation(.linear(duration: animationDuration)) {
-                    proxy.scrollTo(currentOffset, anchor: .center)
-                }
-            } else {
+    func animateWithTimer(proxy: ScrollViewProxy, boh: Int ) {
+        let count: Int = 8
+        let duration: Double = 1.0
+        let timeInterval: Double = (duration / Double(count))
+        var counter = self.boh
+        let random = Int.random(in:(counter + 30)...(counter+70))
+        let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { (timer) in
+            withAnimation(.default) {
+                proxy.scrollTo(counter, anchor: .center)
+                self.boh = counter
+            }
+            if counter < random {
+                counter+=1
+                
+            }else{
                 timer.invalidate()
-                DispatchQueue.main.async {
-                    print("Animation Completed")
-                    completion()
-                }
             }
         }
-        RunLoop.main.add(timer, forMode: .common)
+        timer.fire()
     }
+//    func animateWithTimer(proxy: ScrollViewProxy, completion: @escaping () -> Void) {
+//        let animationDuration: TimeInterval = 60.0
+//        let framesPerSecond = 60
+//        let numberOfFrames = Int(animationDuration * Double(framesPerSecond))
+//        let totalDistance = Int(animationDuration * 30) // Adjust the number to control duration of the animation
+//        var currentOffset = 0
+//        let timer = Timer.scheduledTimer(withTimeInterval: 1.0 / Double(framesPerSecond), repeats: true) { timer in
+//            currentOffset += 60
+//            if currentOffset <= totalDistance {
+//                withAnimation(.linear(duration: animationDuration)) {
+//                    proxy.scrollTo(currentOffset, anchor: .center)
+//                }
+//            } else {
+//                timer.invalidate()
+//                DispatchQueue.main.async {
+//                    print("Animation Completed")
+//                    completion()
+//                }
+//            }
+//        }
+//        RunLoop.main.add(timer, forMode: .common)
+//    }
 }
 
 #Preview {
-    Scrollable3(finalText3: .constant("c")/*,blockSpinn3: .constant(false)*/, spinn3: .constant(false))
+    Scrollable3(spinn3: .constant(false))
 }

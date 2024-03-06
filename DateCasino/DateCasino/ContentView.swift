@@ -11,22 +11,19 @@ struct ContentView: View {
     @State var spinn1 : Bool = false
     @State var spinn2 : Bool = false
     @State var spinn3 : Bool = false
-    @State var finalText0 = "a"
-    @State var finalText2 = "b"
-    @State var finalText3 = "c"
     @State var isPresented : Bool = false
     @State var animationIsOn = false
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 VStack {
-                    Scrollable(finalText0: $finalText0/*, blockSpinn: $blockSpinn*/, spinn1: $spinn1)
+                    Scrollable(spinn1: $spinn1)
                         .background(.black)
                         .position(x: geometry.size.width / 2, y: geometry.size.height / 2.7)
-                    Scrollable2(finalText2: $finalText2/*, blockSpinn2: $blockSpinn2*/, spinn2: $spinn2)
+                    Scrollable2(spinn2: $spinn2)
                         .background(.black)
                         .position(x: geometry.size.width / 2, y: geometry.size.height / 6.2)
-                    Scrollable3(finalText3: $finalText3/*, blockSpinn3: $blockSpinn3*/, spinn3: $spinn3)
+                    Scrollable3(spinn3: $spinn3)
                         .background(.black)
                         .position(x: geometry.size.width / 2, y: geometry.size.height / -21)
                 }
@@ -40,8 +37,8 @@ struct ContentView: View {
                         AnimatedLeverView(spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, animationIsOn: $animationIsOn, action: toggleSpins)
                             .position(x: geometry.size.width / 1.16, y: geometry.size.height / 2)
                     }
-                    GetFinalView(isPresented: $isPresented, spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3, finalText0: $finalText0, finalText2: $finalText2, finalText3: $finalText3)
-                        .position(x: geometry.size.width / 2, y: geometry.size.height / 1.38)
+                    GetFinalView(isPresented: $isPresented, spinn1: $spinn1, spinn2: $spinn2, spinn3: $spinn3)
+                        .position(x: geometry.size.width / 2, y: geometry.size.height / 1.34)
                 }
             }
         }
@@ -54,5 +51,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(spinn1: false, spinn2: false, spinn3: false/*, blockSpinn: false, blockSpinn2: false, blockSpinn3: false*/)
+    ContentView(spinn1: false, spinn2: false, spinn3: false)
 }
